@@ -28,6 +28,7 @@
 		8DEA090E17A19A9A003047A0 /* KBKegProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090817A19A9A003047A0 /* KBKegProcessing.m */; };
 		8DEA090F17A19A9A003047A0 /* Serial.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090917A19A9A003047A0 /* Serial.c */; };
 		8DEA091317A19B3B003047A0 /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA091217A19B3B003047A0 /* Glass.aiff */; };
+		8DEA091717A19DE6003047A0 /* KBTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA091617A19DE6003047A0 /* KBTypes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		8DEA090917A19A9A003047A0 /* Serial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Serial.c; path = Classes/Processing/Serial.c; sourceTree = "<group>"; };
 		8DEA090A17A19A9A003047A0 /* Serial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Serial.h; path = Classes/Processing/Serial.h; sourceTree = "<group>"; };
 		8DEA091217A19B3B003047A0 /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Glass.aiff; path = Resources/Sounds/Glass.aiff; sourceTree = "<group>"; };
+		8DEA091517A19DE6003047A0 /* KBTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBTypes.h; path = Classes/Views/KBTypes.h; sourceTree = "<group>"; };
+		8DEA091617A19DE6003047A0 /* KBTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBTypes.m; path = Classes/Views/KBTypes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,7 @@
 		8DEA08FF17A19A5A003047A0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8DEA091417A19DDD003047A0 /* Views */,
 				8DEA090017A19A61003047A0 /* Processing */,
 			);
 			name = Classes;
@@ -215,6 +219,15 @@
 				8DEA091217A19B3B003047A0 /* Glass.aiff */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		8DEA091417A19DDD003047A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DEA091517A19DE6003047A0 /* KBTypes.h */,
+				8DEA091617A19DE6003047A0 /* KBTypes.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +348,7 @@
 				8DEA090D17A19A9A003047A0 /* KBKegboardMessage.m in Sources */,
 				8DEA090E17A19A9A003047A0 /* KBKegProcessing.m in Sources */,
 				8DEA090F17A19A9A003047A0 /* Serial.c in Sources */,
+				8DEA091717A19DE6003047A0 /* KBTypes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +454,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPadPingPong/iPadPingPong-Prefix.pch";
 				INFOPLIST_FILE = "iPadPingPong/iPadPingPong-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -451,6 +466,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPadPingPong/iPadPingPong-Prefix.pch";
 				INFOPLIST_FILE = "iPadPingPong/iPadPingPong-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
