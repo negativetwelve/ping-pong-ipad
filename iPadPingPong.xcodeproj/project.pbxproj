@@ -34,6 +34,8 @@
 		8DEA092317A1A732003047A0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA092117A1A729003047A0 /* AudioToolbox.framework */; };
 		8DEA092717A1B264003047A0 /* PPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA092617A1B264003047A0 /* PPUser.m */; };
 		8DEA092A17A1B275003047A0 /* PPMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA092917A1B275003047A0 /* PPMatch.m */; };
+		8DEA092F17A1B488003047A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA092B17A1B471003047A0 /* MobileCoreServices.framework */; };
+		8DEA093017A1B48A003047A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA092D17A1B47B003047A0 /* SystemConfiguration.framework */; };
 		D118523ECEF94202A8C382FB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BF51020534B188FE7E327 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		8DEA092617A1B264003047A0 /* PPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUser.m; path = Classes/Models/PPUser.m; sourceTree = "<group>"; };
 		8DEA092817A1B275003047A0 /* PPMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMatch.h; path = Classes/Models/PPMatch.h; sourceTree = "<group>"; };
 		8DEA092917A1B275003047A0 /* PPMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMatch.m; path = Classes/Models/PPMatch.m; sourceTree = "<group>"; };
+		8DEA092B17A1B471003047A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8DEA092D17A1B47B003047A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				8DEA092317A1A732003047A0 /* AudioToolbox.framework in Frameworks */,
 				8DEA091A17A1A20A003047A0 /* QuartzCore.framework in Frameworks */,
 				8DEA08C217A199D5003047A0 /* UIKit.framework in Frameworks */,
+				8DEA093017A1B48A003047A0 /* SystemConfiguration.framework in Frameworks */,
+				8DEA092F17A1B488003047A0 /* MobileCoreServices.framework in Frameworks */,
 				8DEA08C417A199D5003047A0 /* Foundation.framework in Frameworks */,
 				8DEA08C617A199D5003047A0 /* CoreGraphics.framework in Frameworks */,
 				D118523ECEF94202A8C382FB /* libPods.a in Frameworks */,
@@ -144,6 +150,8 @@
 		8DEA08C017A199D5003047A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DEA092D17A1B47B003047A0 /* SystemConfiguration.framework */,
+				8DEA092B17A1B471003047A0 /* MobileCoreServices.framework */,
 				8DEA092117A1A729003047A0 /* AudioToolbox.framework */,
 				8DEA091817A1A201003047A0 /* QuartzCore.framework */,
 				8DEA08C117A199D5003047A0 /* UIKit.framework */,
