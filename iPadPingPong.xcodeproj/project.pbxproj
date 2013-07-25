@@ -29,6 +29,7 @@
 		8DEA090F17A19A9A003047A0 /* Serial.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090917A19A9A003047A0 /* Serial.c */; };
 		8DEA091317A19B3B003047A0 /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA091217A19B3B003047A0 /* Glass.aiff */; };
 		8DEA091717A19DE6003047A0 /* KBTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA091617A19DE6003047A0 /* KBTypes.m */; };
+		8DEA091A17A1A20A003047A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA091817A1A201003047A0 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		8DEA091217A19B3B003047A0 /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Glass.aiff; path = Resources/Sounds/Glass.aiff; sourceTree = "<group>"; };
 		8DEA091517A19DE6003047A0 /* KBTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBTypes.h; path = Classes/Views/KBTypes.h; sourceTree = "<group>"; };
 		8DEA091617A19DE6003047A0 /* KBTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBTypes.m; path = Classes/Views/KBTypes.m; sourceTree = "<group>"; };
+		8DEA091817A1A201003047A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEA091A17A1A20A003047A0 /* QuartzCore.framework in Frameworks */,
 				8DEA08C217A199D5003047A0 /* UIKit.framework in Frameworks */,
 				8DEA08C417A199D5003047A0 /* Foundation.framework in Frameworks */,
 				8DEA08C617A199D5003047A0 /* CoreGraphics.framework in Frameworks */,
@@ -124,6 +127,7 @@
 		8DEA08C017A199D5003047A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DEA091817A1A201003047A0 /* QuartzCore.framework */,
 				8DEA08C117A199D5003047A0 /* UIKit.framework */,
 				8DEA08C317A199D5003047A0 /* Foundation.framework */,
 				8DEA08C517A199D5003047A0 /* CoreGraphics.framework */,

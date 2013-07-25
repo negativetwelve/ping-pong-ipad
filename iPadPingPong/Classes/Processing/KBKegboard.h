@@ -45,7 +45,7 @@
   NSThread *_readLoopThread;
 }
 
-@property (assign, nonatomic) id<KBKegboardDelegate> delegate;
+@property (retain, nonatomic) id<KBKegboardDelegate> delegate;
 
 - (id)initWithDelegate:(id<KBKegboardDelegate>)delegate;
 

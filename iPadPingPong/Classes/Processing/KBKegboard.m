@@ -24,7 +24,7 @@
 
 @implementation KBKegboard
 
-@synthesize delegate=_delegate;
+@synthesize delegate = _delegate;
 
 static NSInteger gFileDescriptor;
 
@@ -59,7 +59,6 @@ static NSInteger gFileDescriptor;
 
 - (void)dealloc {
   close(gFileDescriptor);
-  [super dealloc];
 }
 
 - (void)notifyDelegate:(KBKegboardMessage *)message {
@@ -87,9 +86,7 @@ static NSInteger gFileDescriptor;
 }
 
 - (void)readLoop {
-  KBDebug(@"Initializing Read Loop");
-  // Pool is never released since it lasts the whole life of the app
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+  NSLog(@"Initializing Read Loop");
   // Directly ported from PyKeg to ObjectiveC
   char headerBytes[4];
   char payload[KBSP_PAYLOAD_MAXLEN];
@@ -119,13 +116,13 @@ static NSInteger gFileDescriptor;
       if (byte == KBSP_PREFIX[headerPosition]) {
         headerPosition += 1;
         if (loggedFrameError) {
-          KBDebug(@"Packet framing fixed.");
+          NSLog(@"Packet framing fixed.");
           loggedFrameError = NO;
         }
       // Byte wasn't expected
       } else {
         if (!loggedFrameError) {
-          KBDebug(@"Packet framing broken (found \"%X\", expected \"%X\"); reframing.", byte, KBSP_PREFIX[headerPosition]);
+          NSLog(@"Packet framing broken (found \"%X\", expected \"%X\"); reframing.", byte, KBSP_PREFIX[headerPosition]);
           loggedFrameError = YES;
         }
         headerPosition = 0;
@@ -139,7 +136,7 @@ static NSInteger gFileDescriptor;
     NSInteger messageId = [KBKegboardMessage parseUInt16:headerBytes];
     NSInteger messageLength = [KBKegboardMessage parseUInt16:&headerBytes[2]];
     if (messageLength > KBSP_PAYLOAD_MAXLEN) {
-      KBDebug(@"Bogus message length (%d), skipping message", messageLength);
+      NSLog(@"Bogus message length (%d), skipping message", messageLength);
       continue;
     }
     
@@ -156,18 +153,16 @@ static NSInteger gFileDescriptor;
     }
 
     if (trailer[0] != KBSP_TRAILER[0] || trailer[1] != KBSP_TRAILER[1]) {
-      KBDebug(@"Bad trailer characters 0x%X 0x%X (expected 0x%X 0x%X) skipping message", trailer[0], trailer[1], KBSP_TRAILER[0], KBSP_TRAILER[1]);
+      NSLog(@"Bad trailer characters 0x%X 0x%X (expected 0x%X 0x%X) skipping message", trailer[0], trailer[1], KBSP_TRAILER[0], KBSP_TRAILER[1]);
       continue;
     }
 
     // Create KegboardMessage from id and payload
     KBKegboardMessage *kegboardMessage = [KBKegboardMessage messageWithId:messageId payload:payload length:messageLength timeStamp:timeStamp];
-    KBDebug(@"Got message %@", kegboardMessage);
+    NSLog(@"Got message %@", kegboardMessage);
     // Notify delegate of message
     [self performSelectorOnMainThread:@selector(notifyDelegate:) withObject:kegboardMessage waitUntilDone:NO];
   }
-  // Putting this here for symmetry and to surpress warning message
-  [pool release];
 }
 
 @end
