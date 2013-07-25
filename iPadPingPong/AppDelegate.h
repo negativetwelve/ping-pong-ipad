@@ -11,7 +11,7 @@
 #import "PPUIWindow.h"
 #import "PPHomeViewController.h"
 
-@class ViewController;
+@class PPHomeViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -16,7 +16,6 @@
 		8DEA08D417A199D5003047A0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA08D317A199D5003047A0 /* Default.png */; };
 		8DEA08D617A199D5003047A0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA08D517A199D5003047A0 /* Default@2x.png */; };
 		8DEA08D817A199D5003047A0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA08D717A199D5003047A0 /* Default-568h@2x.png */; };
-		8DEA08DB17A199D5003047A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA08DA17A199D5003047A0 /* ViewController.m */; };
 		8DEA08E917A199D5003047A0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA08E817A199D5003047A0 /* SenTestingKit.framework */; };
 		8DEA08EA17A199D5003047A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA08C117A199D5003047A0 /* UIKit.framework */; };
 		8DEA08EB17A199D5003047A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA08C317A199D5003047A0 /* Foundation.framework */; };
@@ -58,8 +57,6 @@
 		8DEA08D317A199D5003047A0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8DEA08D517A199D5003047A0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8DEA08D717A199D5003047A0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8DEA08D917A199D5003047A0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DEA08DA17A199D5003047A0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8DEA08E717A199D5003047A0 /* iPadPingPongTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadPingPongTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEA08E817A199D5003047A0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8DEA08F017A199D5003047A0 /* iPadPingPongTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPadPingPongTests-Info.plist"; sourceTree = "<group>"; };
@@ -148,8 +145,6 @@
 				8DEA08FF17A19A5A003047A0 /* Classes */,
 				8DEA08D017A199D5003047A0 /* AppDelegate.h */,
 				8DEA08D117A199D5003047A0 /* AppDelegate.m */,
-				8DEA08D917A199D5003047A0 /* ViewController.h */,
-				8DEA08DA17A199D5003047A0 /* ViewController.m */,
 				8DEA091017A19AE1003047A0 /* Resources */,
 				8DEA08C817A199D5003047A0 /* Supporting Files */,
 			);
@@ -356,7 +351,6 @@
 			files = (
 				8DEA08CE17A199D5003047A0 /* main.m in Sources */,
 				8DEA08D217A199D5003047A0 /* AppDelegate.m in Sources */,
-				8DEA08DB17A199D5003047A0 /* ViewController.m in Sources */,
 				8DEA090B17A19A9A003047A0 /* crc16ccitt.c in Sources */,
 				8DEA090C17A19A9A003047A0 /* KBKegboard.m in Sources */,
 				8DEA090D17A19A9A003047A0 /* KBKegboardMessage.m in Sources */,
