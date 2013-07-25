@@ -29,6 +29,7 @@
 		8DEA090D17A19A9A003047A0 /* KBKegboardMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090617A19A9A003047A0 /* KBKegboardMessage.m */; };
 		8DEA090E17A19A9A003047A0 /* KBKegProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090817A19A9A003047A0 /* KBKegProcessing.m */; };
 		8DEA090F17A19A9A003047A0 /* Serial.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090917A19A9A003047A0 /* Serial.c */; };
+		8DEA091317A19B3B003047A0 /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA091217A19B3B003047A0 /* Glass.aiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		8DEA090817A19A9A003047A0 /* KBKegProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBKegProcessing.m; path = Classes/Processing/KBKegProcessing.m; sourceTree = "<group>"; };
 		8DEA090917A19A9A003047A0 /* Serial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Serial.c; path = Classes/Processing/Serial.c; sourceTree = "<group>"; };
 		8DEA090A17A19A9A003047A0 /* Serial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Serial.h; path = Classes/Processing/Serial.h; sourceTree = "<group>"; };
+		8DEA091217A19B3B003047A0 /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Glass.aiff; path = Resources/Sounds/Glass.aiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				8DEA08DA17A199D5003047A0 /* ViewController.m */,
 				8DEA08DC17A199D5003047A0 /* ViewController_iPhone.xib */,
 				8DEA08DF17A199D5003047A0 /* ViewController_iPad.xib */,
+				8DEA091017A19AE1003047A0 /* Resources */,
 				8DEA08C817A199D5003047A0 /* Supporting Files */,
 			);
 			path = iPadPingPong;
@@ -202,6 +205,22 @@
 				8DEA090A17A19A9A003047A0 /* Serial.h */,
 			);
 			name = Processing;
+			sourceTree = "<group>";
+		};
+		8DEA091017A19AE1003047A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DEA091117A19AFE003047A0 /* Sounds */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8DEA091117A19AFE003047A0 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				8DEA091217A19B3B003047A0 /* Glass.aiff */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +300,7 @@
 				8DEA08D817A199D5003047A0 /* Default-568h@2x.png in Resources */,
 				8DEA08DE17A199D5003047A0 /* ViewController_iPhone.xib in Resources */,
 				8DEA08E117A199D5003047A0 /* ViewController_iPad.xib in Resources */,
+				8DEA091317A19B3B003047A0 /* Glass.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
