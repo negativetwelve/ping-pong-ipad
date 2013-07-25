@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PPUIWindow.h"
+#import "PPHomeViewController.h"
+
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) PPUIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) PPHomeViewController *homeViewController;
 
 @end

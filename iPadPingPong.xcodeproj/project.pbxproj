@@ -30,6 +30,8 @@
 		8DEA091317A19B3B003047A0 /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA091217A19B3B003047A0 /* Glass.aiff */; };
 		8DEA091717A19DE6003047A0 /* KBTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA091617A19DE6003047A0 /* KBTypes.m */; };
 		8DEA091A17A1A20A003047A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA091817A1A201003047A0 /* QuartzCore.framework */; };
+		8DEA091D17A1A308003047A0 /* PPUIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA091C17A1A308003047A0 /* PPUIWindow.m */; };
+		8DEA092017A1A335003047A0 /* PPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA091F17A1A335003047A0 /* PPHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,10 @@
 		8DEA091517A19DE6003047A0 /* KBTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBTypes.h; path = Classes/Views/KBTypes.h; sourceTree = "<group>"; };
 		8DEA091617A19DE6003047A0 /* KBTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBTypes.m; path = Classes/Views/KBTypes.m; sourceTree = "<group>"; };
 		8DEA091817A1A201003047A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8DEA091B17A1A308003047A0 /* PPUIWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUIWindow.h; path = Classes/Views/PPUIWindow.h; sourceTree = "<group>"; };
+		8DEA091C17A1A308003047A0 /* PPUIWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUIWindow.m; path = Classes/Views/PPUIWindow.m; sourceTree = "<group>"; };
+		8DEA091E17A1A335003047A0 /* PPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPHomeViewController.h; path = Classes/Views/PPHomeViewController.h; sourceTree = "<group>"; };
+		8DEA091F17A1A335003047A0 /* PPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPHomeViewController.m; path = Classes/Views/PPHomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +236,10 @@
 			children = (
 				8DEA091517A19DE6003047A0 /* KBTypes.h */,
 				8DEA091617A19DE6003047A0 /* KBTypes.m */,
+				8DEA091B17A1A308003047A0 /* PPUIWindow.h */,
+				8DEA091C17A1A308003047A0 /* PPUIWindow.m */,
+				8DEA091E17A1A335003047A0 /* PPHomeViewController.h */,
+				8DEA091F17A1A335003047A0 /* PPHomeViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -353,6 +363,8 @@
 				8DEA090E17A19A9A003047A0 /* KBKegProcessing.m in Sources */,
 				8DEA090F17A19A9A003047A0 /* Serial.c in Sources */,
 				8DEA091717A19DE6003047A0 /* KBTypes.m in Sources */,
+				8DEA091D17A1A308003047A0 /* PPUIWindow.m in Sources */,
+				8DEA092017A1A335003047A0 /* PPHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

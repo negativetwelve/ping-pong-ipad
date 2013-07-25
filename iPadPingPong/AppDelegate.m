@@ -12,16 +12,15 @@
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  self.window = [[PPUIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-      self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+      self.homeViewController = [[PPHomeViewController alloc] init];
   } else {
-      self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+      self.homeViewController = [[PPHomeViewController alloc] init];
   }
-  self.window.rootViewController = self.viewController;
+  self.window.rootViewController = self.homeViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
