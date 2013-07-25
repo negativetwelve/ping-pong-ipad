@@ -24,6 +24,11 @@
 		8DEA08EB17A199D5003047A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA08C317A199D5003047A0 /* Foundation.framework */; };
 		8DEA08F317A199D5003047A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DEA08F117A199D5003047A0 /* InfoPlist.strings */; };
 		8DEA08F617A199D5003047A0 /* iPadPingPongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA08F517A199D5003047A0 /* iPadPingPongTests.m */; };
+		8DEA090B17A19A9A003047A0 /* crc16ccitt.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090117A19A9A003047A0 /* crc16ccitt.c */; };
+		8DEA090C17A19A9A003047A0 /* KBKegboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090417A19A9A003047A0 /* KBKegboard.m */; };
+		8DEA090D17A19A9A003047A0 /* KBKegboardMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090617A19A9A003047A0 /* KBKegboardMessage.m */; };
+		8DEA090E17A19A9A003047A0 /* KBKegProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090817A19A9A003047A0 /* KBKegProcessing.m */; };
+		8DEA090F17A19A9A003047A0 /* Serial.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA090917A19A9A003047A0 /* Serial.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,16 @@
 		8DEA08F217A199D5003047A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8DEA08F417A199D5003047A0 /* iPadPingPongTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iPadPingPongTests.h; sourceTree = "<group>"; };
 		8DEA08F517A199D5003047A0 /* iPadPingPongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPadPingPongTests.m; sourceTree = "<group>"; };
+		8DEA090117A19A9A003047A0 /* crc16ccitt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = crc16ccitt.c; path = Classes/Processing/crc16ccitt.c; sourceTree = "<group>"; };
+		8DEA090217A19A9A003047A0 /* crc16ccitt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crc16ccitt.h; path = Classes/Processing/crc16ccitt.h; sourceTree = "<group>"; };
+		8DEA090317A19A9A003047A0 /* KBKegboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBKegboard.h; path = Classes/Processing/KBKegboard.h; sourceTree = "<group>"; };
+		8DEA090417A19A9A003047A0 /* KBKegboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBKegboard.m; path = Classes/Processing/KBKegboard.m; sourceTree = "<group>"; };
+		8DEA090517A19A9A003047A0 /* KBKegboardMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBKegboardMessage.h; path = Classes/Processing/KBKegboardMessage.h; sourceTree = "<group>"; };
+		8DEA090617A19A9A003047A0 /* KBKegboardMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBKegboardMessage.m; path = Classes/Processing/KBKegboardMessage.m; sourceTree = "<group>"; };
+		8DEA090717A19A9A003047A0 /* KBKegProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KBKegProcessing.h; path = Classes/Processing/KBKegProcessing.h; sourceTree = "<group>"; };
+		8DEA090817A19A9A003047A0 /* KBKegProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KBKegProcessing.m; path = Classes/Processing/KBKegProcessing.m; sourceTree = "<group>"; };
+		8DEA090917A19A9A003047A0 /* Serial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Serial.c; path = Classes/Processing/Serial.c; sourceTree = "<group>"; };
+		8DEA090A17A19A9A003047A0 /* Serial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Serial.h; path = Classes/Processing/Serial.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +134,7 @@
 		8DEA08C717A199D5003047A0 /* iPadPingPong */ = {
 			isa = PBXGroup;
 			children = (
+				8DEA08FF17A19A5A003047A0 /* Classes */,
 				8DEA08D017A199D5003047A0 /* AppDelegate.h */,
 				8DEA08D117A199D5003047A0 /* AppDelegate.m */,
 				8DEA08D917A199D5003047A0 /* ViewController.h */,
@@ -161,6 +177,31 @@
 				8DEA08F117A199D5003047A0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DEA08FF17A19A5A003047A0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8DEA090017A19A61003047A0 /* Processing */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8DEA090017A19A61003047A0 /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				8DEA090117A19A9A003047A0 /* crc16ccitt.c */,
+				8DEA090217A19A9A003047A0 /* crc16ccitt.h */,
+				8DEA090317A19A9A003047A0 /* KBKegboard.h */,
+				8DEA090417A19A9A003047A0 /* KBKegboard.m */,
+				8DEA090517A19A9A003047A0 /* KBKegboardMessage.h */,
+				8DEA090617A19A9A003047A0 /* KBKegboardMessage.m */,
+				8DEA090717A19A9A003047A0 /* KBKegProcessing.h */,
+				8DEA090817A19A9A003047A0 /* KBKegProcessing.m */,
+				8DEA090917A19A9A003047A0 /* Serial.c */,
+				8DEA090A17A19A9A003047A0 /* Serial.h */,
+			);
+			name = Processing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +318,11 @@
 				8DEA08CE17A199D5003047A0 /* main.m in Sources */,
 				8DEA08D217A199D5003047A0 /* AppDelegate.m in Sources */,
 				8DEA08DB17A199D5003047A0 /* ViewController.m in Sources */,
+				8DEA090B17A19A9A003047A0 /* crc16ccitt.c in Sources */,
+				8DEA090C17A19A9A003047A0 /* KBKegboard.m in Sources */,
+				8DEA090D17A19A9A003047A0 /* KBKegboardMessage.m in Sources */,
+				8DEA090E17A19A9A003047A0 /* KBKegProcessing.m in Sources */,
+				8DEA090F17A19A9A003047A0 /* Serial.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +513,7 @@
 				8DEA08FB17A199D5003047A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DEA08FC17A199D5003047A0 /* Build configuration list for PBXNativeTarget "iPadPingPongTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +522,7 @@
 				8DEA08FE17A199D5003047A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
