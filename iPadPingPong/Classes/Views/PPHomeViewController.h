@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPHomeViewController : UIViewController
+@interface PPHomeViewController : UITabBarController
 
 @end

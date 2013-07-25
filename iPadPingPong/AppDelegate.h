@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioServices.h>
 
 #import "PPUIWindow.h"
 #import "PPHomeViewController.h"
 
 @class PPHomeViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : NSObject <UIApplicationDelegate> {
+  SystemSoundID systemSounds_[1];
+}
 
 @property (strong, nonatomic) PPUIWindow *window;
 

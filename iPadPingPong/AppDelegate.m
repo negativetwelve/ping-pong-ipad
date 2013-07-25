@@ -10,13 +10,25 @@
 
 @implementation AppDelegate
 
+- (void)initializeSounds {
+  // Initialize 'glass' sound
+  NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Glass" ofType:@"aiff"];
+  CFURLRef soundURL = (__bridge CFURLRef)[NSURL fileURLWithPath:soundPath];
+  AudioServicesCreateSystemSoundID(soundURL, &systemSounds_[0]);
+}
+
+- (void)playSystemSoundGlass {
+  AudioServicesPlaySystemSound(systemSounds_[0]);
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[PPUIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-      self.homeViewController = [[PPHomeViewController alloc] init];
+    self.homeViewController = [[PPHomeViewController alloc] init];
   } else {
-      self.homeViewController = [[PPHomeViewController alloc] init];
+    self.homeViewController = [[PPHomeViewController alloc] init];
   }
   
   NSLog(@"Loaded home view controller");

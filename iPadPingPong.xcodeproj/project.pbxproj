@@ -31,6 +31,7 @@
 		8DEA091A17A1A20A003047A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA091817A1A201003047A0 /* QuartzCore.framework */; };
 		8DEA091D17A1A308003047A0 /* PPUIWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA091C17A1A308003047A0 /* PPUIWindow.m */; };
 		8DEA092017A1A335003047A0 /* PPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA091F17A1A335003047A0 /* PPHomeViewController.m */; };
+		8DEA092317A1A732003047A0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA092117A1A729003047A0 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		8DEA091C17A1A308003047A0 /* PPUIWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUIWindow.m; path = Classes/Views/PPUIWindow.m; sourceTree = "<group>"; };
 		8DEA091E17A1A335003047A0 /* PPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPHomeViewController.h; path = Classes/Views/PPHomeViewController.h; sourceTree = "<group>"; };
 		8DEA091F17A1A335003047A0 /* PPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPHomeViewController.m; path = Classes/Views/PPHomeViewController.m; sourceTree = "<group>"; };
+		8DEA092117A1A729003047A0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEA092317A1A732003047A0 /* AudioToolbox.framework in Frameworks */,
 				8DEA091A17A1A20A003047A0 /* QuartzCore.framework in Frameworks */,
 				8DEA08C217A199D5003047A0 /* UIKit.framework in Frameworks */,
 				8DEA08C417A199D5003047A0 /* Foundation.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		8DEA08C017A199D5003047A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DEA092117A1A729003047A0 /* AudioToolbox.framework */,
 				8DEA091817A1A201003047A0 /* QuartzCore.framework */,
 				8DEA08C117A199D5003047A0 /* UIKit.framework */,
 				8DEA08C317A199D5003047A0 /* Foundation.framework */,
