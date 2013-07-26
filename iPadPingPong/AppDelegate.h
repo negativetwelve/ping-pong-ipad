@@ -17,10 +17,14 @@
 // Navigation Controllers
 #import "PPUserEditNavigationController.h"
 #import "DebugNavigationController.h"
+#import "PPRecentMatchNavController.h"
+#import "PPSetupMatchViewController.h"
 
 // View Controllers
 #import "PPUserEditViewController.h"
 #import "DebugViewController.h"
+#import "PPLeaderboardViewController.h"
+#import "PPRecentMatchViewController.h"
 
 #import "PPNotifications.h"
 

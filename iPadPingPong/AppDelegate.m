@@ -88,15 +88,23 @@
   PPUserEditViewController *userEditViewController = [[PPUserEditViewController alloc] init];
   PPUserEditNavigationController *userEditNavigationController = [[PPUserEditNavigationController alloc] initWithRootViewController:userEditViewController];
   
+	PPLeaderboardViewController *leaderBoardViewController = [[PPLeaderboardViewController alloc] init];
+	UITabBarItem *leaderBoardTab = [[UITabBarItem alloc] initWithTitle:@"Alton Leaderboard" image:nil tag:1];
+	[leaderBoardViewController setTabBarItem:leaderBoardTab];
+	
+	PPRecentMatchViewController *recentMatchViewController = [[PPRecentMatchViewController alloc] init];
+	PPRecentMatchNavController *recentMatchNavController = [[PPRecentMatchNavController alloc] initWithRootViewController:recentMatchViewController];
+	
   DebugViewController *debugViewController = [[DebugViewController alloc] init];
   DebugNavigationController *debugNavigationController = [[DebugNavigationController alloc] initWithRootViewController:debugViewController];
-  
+  	
   [self registerTagId:@"test"];
   
   NSLog(@"Loaded home view controller");
   
-  [self.homeViewController setViewControllers:@[userEditNavigationController, debugNavigationController]];
+  [self.homeViewController setViewControllers:@[recentMatchNavController, leaderBoardViewController, userEditNavigationController, debugNavigationController]];
   [self.homeViewController setUserEditViewController:userEditViewController];
+		
   self.window.rootViewController = self.homeViewController;
   [self.window makeKeyAndVisible];
 //  [self.window.rootViewController presentModalViewController:userEditNavigationController animated:YES];

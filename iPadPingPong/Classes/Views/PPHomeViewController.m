@@ -20,15 +20,7 @@
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    self.view.backgroundColor = [UIColor whiteColor];
-
-    PPLeaderboardViewController *leaderBoardViewController = [[PPLeaderboardViewController alloc] init];
-    UITabBarItem *leaderBoardTab = [[UITabBarItem alloc] initWithTitle:@"Leaderboard" image:nil tag:1];
-    [leaderBoardViewController setTabBarItem:leaderBoardTab];
-    
-    
-    NSArray *viewControllers = @[leaderBoardViewController];
-    [self setViewControllers:viewControllers];
+    self.view.backgroundColor = [UIColor whiteColor];    
   }
   return self;
 }
