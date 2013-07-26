@@ -41,6 +41,7 @@
 }
 
 -(void)firstPlayerDidBadgeIn:(PPUser *)firstPlayer {
+  [self setPlayerOneUser:firstPlayer];
 	UILabel *playerOne = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 0, 0)];
 	UIImageView *playerOneImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"player1.jpg"]];
 	playerOneImage.frame = CGRectMake(-600, 50, 170, 300);
@@ -58,6 +59,7 @@
 }
 
 -(void)secondPlayerDidBadgeIn:(PPUser *)secondPlayer {
+  [self setPlayerTwoUser:secondPlayer];
 	UILabel *playerTwo = [[UILabel alloc] initWithFrame:CGRectMake(330, 10, 0, 0)];
 	UIImageView *playerTwoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"player2.jpg"]];
 	playerTwoImage.frame = CGRectMake(1200, 50, 170, 300);
@@ -109,8 +111,8 @@
   NSLog(@"winner %@, loser %@", winner, loser);
   
   NSDictionary *params = @{
-  @"winner_badge" : winner.badge,
-  @"loser_badge" : loser.badge,
+                           @"winner" : @{@"badge" : winner.badge},
+                           @"loser" : @{@"badge" : loser.badge},
   };
   
   RKObjectManager *objectManager = [RKObjectManager sharedManager];
