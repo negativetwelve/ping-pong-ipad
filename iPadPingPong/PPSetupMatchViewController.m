@@ -88,6 +88,7 @@
 
 - (void)someoneWon:(PPUser *)winner against:(PPUser *)loser {
   NSLog(@"recording winner/loser");
+  NSLog(@"winner %@, loser %@", winner, loser);
   
   NSDictionary *params = @{
   @"winner_badge" : winner.badge,
