@@ -30,13 +30,6 @@
 	[super viewDidLoad];
 	self.view.backgroundColor = [UIColor whiteColor];
 	
-	UILabel *playerTwo = [[UILabel alloc] initWithFrame:CGRectMake(180, 420, 0, 0)];
-	UIImageView *vsImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"vs.png"]];
-
-	vsImage.frame = CGRectMake(200, 220, 100, 100);
-	
-	[self.view addSubview:vsImage];
-	
 	
 	// Do any additional setup after loading the view.
 }
@@ -93,6 +86,15 @@
 	[UIView animateWithDuration:0.6 animations:^{
 		playerTwoImage.frame = CGRectMake(350, 60, 170, 300);
 	}];
+	
+	UIImageView *vsImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"vs.png"]];
+	
+	vsImage.frame = CGRectMake(0, 0, 1000, 1000);
+	[UIView animateWithDuration:1.0 animations:^{
+		vsImage.frame = CGRectMake(200, 220, 100, 100);
+	}];
+	
+	[self.view addSubview:vsImage];
 	
 	UIButton *player1Button = [UIButton buttonWithType:UIButtonTypeCustom];
 	[player1Button setFrame: CGRectMake(20, 440, 200, 70)];

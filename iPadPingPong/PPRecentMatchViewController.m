@@ -91,7 +91,9 @@
 	if (!cell) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:tableViewCellIdentifier];
 	}
-	
+	for (UIView *subView in [cell subviews]) {
+		[subView removeFromSuperview];
+	}
 	if (self.matches) {
 		PPMatch* match = [self.matches objectAtIndex:[indexPath row]];
 		UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 40, 40)];
