@@ -36,6 +36,9 @@
 		8DEA092A17A1B275003047A0 /* PPMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA092917A1B275003047A0 /* PPMatch.m */; };
 		8DEA092F17A1B488003047A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA092B17A1B471003047A0 /* MobileCoreServices.framework */; };
 		8DEA093017A1B48A003047A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA092D17A1B47B003047A0 /* SystemConfiguration.framework */; };
+		8DEA093317A1BD2C003047A0 /* PPUserEditNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA093217A1BD2C003047A0 /* PPUserEditNavigationController.m */; };
+		8DEA093617A1BDF9003047A0 /* PPUserEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA093517A1BDF9003047A0 /* PPUserEditViewController.m */; };
+		8DEA093B17A1C6D4003047A0 /* PPNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA093A17A1C6D4003047A0 /* PPNotifications.m */; };
 		D118523ECEF94202A8C382FB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BF51020534B188FE7E327 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +99,12 @@
 		8DEA092917A1B275003047A0 /* PPMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMatch.m; path = Classes/Models/PPMatch.m; sourceTree = "<group>"; };
 		8DEA092B17A1B471003047A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8DEA092D17A1B47B003047A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8DEA093117A1BD2C003047A0 /* PPUserEditNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUserEditNavigationController.h; path = Classes/Views/PPUserEditNavigationController.h; sourceTree = "<group>"; };
+		8DEA093217A1BD2C003047A0 /* PPUserEditNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUserEditNavigationController.m; path = Classes/Views/PPUserEditNavigationController.m; sourceTree = "<group>"; };
+		8DEA093417A1BDF9003047A0 /* PPUserEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUserEditViewController.h; path = Classes/Views/PPUserEditViewController.h; sourceTree = "<group>"; };
+		8DEA093517A1BDF9003047A0 /* PPUserEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUserEditViewController.m; path = Classes/Views/PPUserEditViewController.m; sourceTree = "<group>"; };
+		8DEA093917A1C6D4003047A0 /* PPNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPNotifications.h; path = Classes/PPNotifications.h; sourceTree = "<group>"; };
+		8DEA093A17A1C6D4003047A0 /* PPNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPNotifications.m; path = Classes/PPNotifications.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +178,8 @@
 				8DEA08FF17A19A5A003047A0 /* Classes */,
 				8DEA08D017A199D5003047A0 /* AppDelegate.h */,
 				8DEA08D117A199D5003047A0 /* AppDelegate.m */,
+				8DEA093917A1C6D4003047A0 /* PPNotifications.h */,
+				8DEA093A17A1C6D4003047A0 /* PPNotifications.m */,
 				8DEA091017A19AE1003047A0 /* Resources */,
 				8DEA08C817A199D5003047A0 /* Supporting Files */,
 			);
@@ -260,6 +271,10 @@
 				8DEA091C17A1A308003047A0 /* PPUIWindow.m */,
 				8DEA091E17A1A335003047A0 /* PPHomeViewController.h */,
 				8DEA091F17A1A335003047A0 /* PPHomeViewController.m */,
+				8DEA093117A1BD2C003047A0 /* PPUserEditNavigationController.h */,
+				8DEA093217A1BD2C003047A0 /* PPUserEditNavigationController.m */,
+				8DEA093417A1BDF9003047A0 /* PPUserEditViewController.h */,
+				8DEA093517A1BDF9003047A0 /* PPUserEditViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -282,11 +297,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DEA08F917A199D5003047A0 /* Build configuration list for PBXNativeTarget "iPadPingPong" */;
 			buildPhases = (
-				43B6B026BDD64333AD9E6517 /* Check Pods Manifest.lock */,
 				8DEA08BA17A199D5003047A0 /* Sources */,
 				8DEA08BB17A199D5003047A0 /* Frameworks */,
 				8DEA08BC17A199D5003047A0 /* Resources */,
-				27AC87B9F33C419B910BF196 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,7 +317,6 @@
 				8DEA08E217A199D5003047A0 /* Sources */,
 				8DEA08E317A199D5003047A0 /* Frameworks */,
 				8DEA08E417A199D5003047A0 /* Resources */,
-				8DEA08E517A199D5003047A0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -366,52 +378,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		27AC87B9F33C419B910BF196 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		43B6B026BDD64333AD9E6517 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8DEA08E517A199D5003047A0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		8DEA08BA17A199D5003047A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -429,6 +395,9 @@
 				8DEA092017A1A335003047A0 /* PPHomeViewController.m in Sources */,
 				8DEA092717A1B264003047A0 /* PPUser.m in Sources */,
 				8DEA092A17A1B275003047A0 /* PPMatch.m in Sources */,
+				8DEA093317A1BD2C003047A0 /* PPUserEditNavigationController.m in Sources */,
+				8DEA093617A1BDF9003047A0 /* PPUserEditViewController.m in Sources */,
+				8DEA093B17A1C6D4003047A0 /* PPNotifications.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +451,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -499,6 +469,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -514,7 +485,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -524,7 +496,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -532,6 +504,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 341B61E563EA46508ED9ED2E /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPadPingPong/iPadPingPong-Prefix.pch";
 				INFOPLIST_FILE = "iPadPingPong/iPadPingPong-Info.plist";
@@ -545,6 +519,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 341B61E563EA46508ED9ED2E /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPadPingPong/iPadPingPong-Prefix.pch";
 				INFOPLIST_FILE = "iPadPingPong/iPadPingPong-Info.plist";

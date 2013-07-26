@@ -13,6 +13,7 @@
 @end
 
 @implementation PPHomeViewController
+@synthesize userEditViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

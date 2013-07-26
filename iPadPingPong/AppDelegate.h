@@ -10,7 +10,18 @@
 #import <AudioToolbox/AudioServices.h>
 
 #import "PPUIWindow.h"
+
 #import "PPHomeViewController.h"
+
+// Navigation Controllers
+#import "PPUserEditNavigationController.h"
+
+// View Controllers
+#import "PPUserEditViewController.h"
+
+#import "PPNotifications.h"
+
+#import "KBKegProcessing.h"
 
 @class PPHomeViewController;
 

@@ -21,6 +21,37 @@
   AudioServicesPlaySystemSound(systemSounds_[0]);
 }
 
+- (void)registerTagId:(NSString *)tagId {
+  NSLog(@"got tagid: %@", tagId);
+  [self.homeViewController.userEditViewController setTagId:tagId editable:NO];
+}
+
+- (void)_unknownTagId:(NSNotification *)notification {
+  [self registerTagId:[notification object]];
+  [self playSystemSoundGlass];
+}
+
+- (void)login:(PPUser *)user {
+  NSLog(@"logging in user: %@", user.name);
+  
+}
+
+- (void)kegboard:(KBKegboard *)kegboard didReceiveAuthToken:(KBKegboardMessageAuthToken *)message {
+  // Only send a message when the card becomes present
+//  if ([message status]) [self.delegate kegProcessing:self didReceiveRFIDTagId:[message token]];
+}
+
+- (void)didReceiveRFIDTagId:(NSString *)tagId {
+  PPUser *user = [self.homeViewController.userEditViewController loginWithTagId:tagId];
+  if (!user) {
+//    [self logout];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PPUnknownTagIdNotification object:tagId];
+  }
+}
+
+- (void)start:(PPUserEditViewController *)controller {
+  KBKegProcessing *keg = [[KBKegProcessing alloc] init];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[PPUIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -31,11 +62,28 @@
     self.homeViewController = [[PPHomeViewController alloc] init];
   }
   
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_unknownTagId:) name:PPUnknownTagIdNotification object:nil];
+
+  PPUserEditViewController *userEditViewController = [[PPUserEditViewController alloc] init];
+  PPUserEditNavigationController *userEditNavigationController = [[PPUserEditNavigationController alloc] initWithRootViewController:userEditViewController];
+  
+  [self registerTagId:@"test"];
+  
   NSLog(@"Loaded home view controller");
   
+  [self.homeViewController setViewControllers:@[userEditNavigationController]];
+  [self.homeViewController setUserEditViewController:userEditViewController];
   self.window.rootViewController = self.homeViewController;
-    [self.window makeKeyAndVisible];
-    return YES;
+  [self.window makeKeyAndVisible];
+//  [self.window.rootViewController presentModalViewController:userEditNavigationController animated:YES];
+
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"Scan your Yelp ID" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+  
+  [alert show];
+  
+  [self start:userEditViewController];
+  
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

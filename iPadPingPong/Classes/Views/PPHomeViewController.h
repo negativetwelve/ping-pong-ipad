@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPHomeViewController : UITabBarController
+#import "PPUserEditViewController.h"
+
+@class PPUserEditViewController;
+@interface PPHomeViewController : UITabBarController {
+  PPUserEditViewController *userEditViewController;
+}
+
+@property (nonatomic, strong) PPUserEditViewController *userEditViewController;
 
 @end
