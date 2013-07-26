@@ -13,6 +13,7 @@
 @end
 
 @implementation PPSetupMatchViewController
+@synthesize user;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

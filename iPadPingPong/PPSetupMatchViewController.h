@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PPUser.h"
 
-@interface PPSetupMatchViewController : UIViewController
+@interface PPSetupMatchViewController : UIViewController {
+  PPUser *user;
+}
+
+@property (strong, nonatomic) PPUser *user;
 
 @end

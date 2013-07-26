@@ -56,6 +56,26 @@
     NSLog(@"Recieved player from server");
     PPUser *user = [mappingResult.dictionary objectForKey:@"user"];
     NSLog(@"%@", user.badge);
+    
+    if ([self firstUserIsLoggedIn]) {
+      // log in second player
+      
+      
+      
+      [self setFirstUserIsLoggedIn:NO];
+    } else {
+      // log in first player
+      
+      // load modal
+      PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
+      setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
+      [setupMatchController setUser:user];
+      [self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
+      
+      // wait for second user
+      [self setFirstUserIsLoggedIn:YES];
+    }
+    
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
     
@@ -111,7 +131,8 @@
   
   [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
   
-  NSURL *localURL = [NSURL URLWithString:@"http://10.254.50.36:5000/"];
+//  NSURL *localURL = [NSURL URLWithString:@"http://10.254.50.36:5000/"];
+  NSURL *localURL = [NSURL URLWithString:@"http://poundpong.herokuapp.com/"];
   AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
   
   [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
@@ -122,6 +143,7 @@
   [RKObjectManager setSharedManager:objectManager];
   
   [self setProcessing:NO];
+  [self setFirstUserIsLoggedIn:NO];
 
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     self.homeViewController = [[PPHomeViewController alloc] init];
