@@ -41,6 +41,7 @@
   // Hopefully this runs when the card is scanned...
   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:@"made it back to app delegate" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
   [alert show];
+  // Add handling for view controller here.
 }
 
 - (void)kegboard:(KBKegboard *)kegboard didReceiveAuthToken:(KBKegboardMessageAuthToken *)message {
