@@ -18,8 +18,8 @@
 
 @property (strong, nonatomic) PPUser *user;
 
-@property (nonatomic, copy) PPUser *playerOneUser;
-@property (nonatomic, copy) PPUser *playerTwoUser;
+@property (nonatomic, strong) PPUser *playerOneUser;
+@property (nonatomic, strong) PPUser *playerTwoUser;
 
 -(void)firstPlayerDidBadgeIn:(PPUser *)firstPlayer;
 -(void)secondPlayerDidBadgeIn:(PPUser *)secondPlayer;
