@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <RestKit/RestKit.h>
 
 @implementation AppDelegate
 
@@ -25,6 +26,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[PPUIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
+  RKLogConfigureByName("RestKit/Network*", RKLogLevelTrace);
+  RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+  
+  [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+  
+  NSURL *localURL = [NSURL URLWithString:@"http://localhost:3000/"];
+  AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
+  
+  [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+  
+  RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+  [RKObjectManager setSharedManager:objectManager];
+
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     self.homeViewController = [[PPHomeViewController alloc] init];
   } else {

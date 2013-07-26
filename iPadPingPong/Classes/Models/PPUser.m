@@ -17,6 +17,7 @@
    @"badge_id" : @"badgeId",
    @"name" : @"name",
    @"skill_level" : @"skillLevel",
+   @"win_count" : @"winCount"
    }];
   return userMapping;
 }

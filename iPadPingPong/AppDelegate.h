@@ -11,6 +11,7 @@
 
 #import "PPUIWindow.h"
 #import "PPHomeViewController.h"
+#import <RestKit/RestKit.h>
 
 @class PPHomeViewController;
 

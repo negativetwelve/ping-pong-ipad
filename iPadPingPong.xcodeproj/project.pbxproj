@@ -37,6 +37,7 @@
 		8DEA092F17A1B488003047A0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA092B17A1B471003047A0 /* MobileCoreServices.framework */; };
 		8DEA093017A1B48A003047A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA092D17A1B47B003047A0 /* SystemConfiguration.framework */; };
 		D118523ECEF94202A8C382FB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BF51020534B188FE7E327 /* libPods.a */; };
+		FAE4711117A1C578001FBEEC /* PPLeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE4711017A1C578001FBEEC /* PPLeaderboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		8DEA092917A1B275003047A0 /* PPMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMatch.m; path = Classes/Models/PPMatch.m; sourceTree = "<group>"; };
 		8DEA092B17A1B471003047A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8DEA092D17A1B47B003047A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FAE4710F17A1C578001FBEEC /* PPLeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLeaderboardViewController.h; sourceTree = "<group>"; };
+		FAE4711017A1C578001FBEEC /* PPLeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeaderboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,7 @@
 		8DEA08FF17A19A5A003047A0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4710B17A1C4DD001FBEEC /* Controllers */,
 				8DEA092417A1B24A003047A0 /* Models */,
 				8DEA091417A19DDD003047A0 /* Views */,
 				8DEA090017A19A61003047A0 /* Processing */,
@@ -258,8 +262,6 @@
 				8DEA091617A19DE6003047A0 /* KBTypes.m */,
 				8DEA091B17A1A308003047A0 /* PPUIWindow.h */,
 				8DEA091C17A1A308003047A0 /* PPUIWindow.m */,
-				8DEA091E17A1A335003047A0 /* PPHomeViewController.h */,
-				8DEA091F17A1A335003047A0 /* PPHomeViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -273,6 +275,17 @@
 				8DEA092917A1B275003047A0 /* PPMatch.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FAE4710B17A1C4DD001FBEEC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8DEA091E17A1A335003047A0 /* PPHomeViewController.h */,
+				8DEA091F17A1A335003047A0 /* PPHomeViewController.m */,
+				FAE4710F17A1C578001FBEEC /* PPLeaderboardViewController.h */,
+				FAE4711017A1C578001FBEEC /* PPLeaderboardViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +442,7 @@
 				8DEA092017A1A335003047A0 /* PPHomeViewController.m in Sources */,
 				8DEA092717A1B264003047A0 /* PPUser.m in Sources */,
 				8DEA092A17A1B275003047A0 /* PPMatch.m in Sources */,
+				FAE4711117A1C578001FBEEC /* PPLeaderboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "PPHomeViewController.h"
+#import "PPLeaderboardViewController.h"
 
 @interface PPHomeViewController ()
 
@@ -16,23 +17,32 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-      self.view.backgroundColor = [UIColor whiteColor];
-    }
-    return self;
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  if (self) {
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    PPLeaderboardViewController *leaderBoardViewController = [[PPLeaderboardViewController alloc] init];
+    UITabBarItem *leaderBoardTab = [[UITabBarItem alloc] initWithTitle:@"Leaderboard" image:nil tag:1];
+    [leaderBoardViewController setTabBarItem:leaderBoardTab];
+    
+    
+    NSArray *viewControllers = @[leaderBoardViewController];
+    [self setViewControllers:viewControllers];
+  }
+  return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  
 	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 @end

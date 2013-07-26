@@ -7,7 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
+
+@class PPUser;
 
 @interface PPMatch : NSObject
+
+@property (nonatomic, retain) PPUser *winner;
+@property (nonatomic, retain) PPUser *loser;
+@property (nonatomic, copy) NSDate *timeStamp;
+@property (nonatomic, copy) NSNumber *pointsExchanged;
+
++ (RKObjectMapping *)mapping;
++ (RKResponseDescriptor *)getMatchResponseDescriptor;
++ (RKResponseDescriptor *)postMatchResponseDescriptor;
++ (RKResponseDescriptor *)getMatchesResponseDescriptor;
 
 @end

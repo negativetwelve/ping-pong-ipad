@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSString *badgeId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *skillLevel;
+@property (nonatomic, copy) NSNumber *winCount;
 
 + (RKObjectMapping *)mapping;
 + (RKResponseDescriptor *)usersResponseDescriptor;
