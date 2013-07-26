@@ -90,8 +90,8 @@
   NSLog(@"recording winner/loser");
   
   NSDictionary *params = @{
-  @"winner_badge" : @"",
-  @"loser_badge" : @"",
+  @"winner_badge" : winner.badge,
+  @"loser_badge" : loser.badge,
   };
   
   RKObjectManager *objectManager = [RKObjectManager sharedManager];
