@@ -37,9 +37,15 @@
   
 }
 
+- (void)kegProcessing:(AppDelegate *)appDelegate didReceiveRFIDTagId:(NSString *)tagID {
+  // Hopefully this runs when the card is scanned...
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:@"made it back to app delegate" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+  [alert show];
+}
+
 - (void)kegboard:(KBKegboard *)kegboard didReceiveAuthToken:(KBKegboardMessageAuthToken *)message {
   // Only send a message when the card becomes present
-//  if ([message status]) [self.delegate kegProcessing:self didReceiveRFIDTagId:[message token]];
+  if ([message status]) [self kegProcessing:self didReceiveRFIDTagId:[message token]];
 }
 
 - (void)didReceiveRFIDTagId:(NSString *)tagId {
