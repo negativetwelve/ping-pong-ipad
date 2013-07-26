@@ -97,11 +97,11 @@
 }
 
 - (void)player1buttonPressed:(id)sender {
-	
+	[self someoneWon:self.playerOneUser against:self.playerTwoUser];
 }
 
 - (void)player2buttonPressed:(id)sender {
-	
+	[self someoneWon:self.playerTwoUser against:self.playerOneUser];
 }
 
 - (void)someoneWon:(PPUser *)winner against:(PPUser *)loser {
