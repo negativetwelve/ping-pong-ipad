@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PPUser.h"
+@class PPUser;
 
 @interface PPSetupMatchViewController : UIViewController {
   PPUser *user;
 }
 
 @property (strong, nonatomic) PPUser *user;
+
+@property (nonatomic, copy) PPUser *playerOneUser;
+@property (nonatomic, copy) PPUser *playerTwoUser;
+
+-(void)firstPlayerDidBadgeIn:(PPUser *)firstPlayer;
+-(void)secondPlayerDidBadgeIn:(PPUser *)secondPlayer;
 
 @end
