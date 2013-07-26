@@ -16,9 +16,11 @@
 
 // Navigation Controllers
 #import "PPUserEditNavigationController.h"
+#import "DebugNavigationController.h"
 
 // View Controllers
 #import "PPUserEditViewController.h"
+#import "DebugViewController.h"
 
 #import "PPNotifications.h"
 

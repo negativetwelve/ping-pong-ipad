@@ -37,19 +37,19 @@
   
 }
 
-- (void)kegProcessing:(AppDelegate *)appDelegate didReceiveRFIDTagId:(NSString *)tagID {
+- (void)didReceiveRFIDTagId:(NSString *)tagID {
   // Hopefully this runs when the card is scanned...
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:@"made it back to app delegate" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"app delegate with token: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
   [alert show];
   // Add handling for view controller here.
 }
 
 - (void)kegboard:(KBKegboard *)kegboard didReceiveAuthToken:(KBKegboardMessageAuthToken *)message {
   // Only send a message when the card becomes present
-  if ([message status]) [self kegProcessing:self didReceiveRFIDTagId:[message token]];
+  if ([message status]) [self didReceiveRFIDTagId:[message token]];
 }
 
-- (void)didReceiveRFIDTagId:(NSString *)tagId {
+- (void)testDidReceiveRFIDTagId:(NSString *)tagId {
   PPUser *user = [self.homeViewController.userEditViewController loginWithTagId:tagId];
   if (!user) {
 //    [self logout];
@@ -88,11 +88,14 @@
   PPUserEditViewController *userEditViewController = [[PPUserEditViewController alloc] init];
   PPUserEditNavigationController *userEditNavigationController = [[PPUserEditNavigationController alloc] initWithRootViewController:userEditViewController];
   
+  DebugViewController *debugViewController = [[DebugViewController alloc] init];
+  DebugNavigationController *debugNavigationController = [[DebugNavigationController alloc] initWithRootViewController:debugViewController];
+  
   [self registerTagId:@"test"];
   
   NSLog(@"Loaded home view controller");
   
-  [self.homeViewController setViewControllers:@[userEditNavigationController]];
+  [self.homeViewController setViewControllers:@[userEditNavigationController, debugNavigationController]];
   [self.homeViewController setUserEditViewController:userEditViewController];
   self.window.rootViewController = self.homeViewController;
   [self.window makeKeyAndVisible];

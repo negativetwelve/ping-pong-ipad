@@ -39,6 +39,8 @@
 		8DEA093317A1BD2C003047A0 /* PPUserEditNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA093217A1BD2C003047A0 /* PPUserEditNavigationController.m */; };
 		8DEA093617A1BDF9003047A0 /* PPUserEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA093517A1BDF9003047A0 /* PPUserEditViewController.m */; };
 		8DEA093B17A1C6D4003047A0 /* PPNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA093A17A1C6D4003047A0 /* PPNotifications.m */; };
+		8DFE2EB717A2E4EC00C4782A /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE2EB617A2E4EC00C4782A /* DebugViewController.m */; };
+		8DFE2EBA17A2E50A00C4782A /* DebugNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE2EB917A2E50A00C4782A /* DebugNavigationController.m */; };
 		D118523ECEF94202A8C382FB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BF51020534B188FE7E327 /* libPods.a */; };
 		FAE4711117A1C578001FBEEC /* PPLeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE4711017A1C578001FBEEC /* PPLeaderboardViewController.m */; };
 /* End PBXBuildFile section */
@@ -100,14 +102,18 @@
 		8DEA092917A1B275003047A0 /* PPMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMatch.m; path = Classes/Models/PPMatch.m; sourceTree = "<group>"; };
 		8DEA092B17A1B471003047A0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8DEA092D17A1B47B003047A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		FAE4710F17A1C578001FBEEC /* PPLeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLeaderboardViewController.h; sourceTree = "<group>"; };
-		FAE4711017A1C578001FBEEC /* PPLeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeaderboardViewController.m; sourceTree = "<group>"; };
 		8DEA093117A1BD2C003047A0 /* PPUserEditNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUserEditNavigationController.h; path = Classes/Views/PPUserEditNavigationController.h; sourceTree = "<group>"; };
 		8DEA093217A1BD2C003047A0 /* PPUserEditNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUserEditNavigationController.m; path = Classes/Views/PPUserEditNavigationController.m; sourceTree = "<group>"; };
 		8DEA093417A1BDF9003047A0 /* PPUserEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPUserEditViewController.h; path = Classes/Views/PPUserEditViewController.h; sourceTree = "<group>"; };
 		8DEA093517A1BDF9003047A0 /* PPUserEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPUserEditViewController.m; path = Classes/Views/PPUserEditViewController.m; sourceTree = "<group>"; };
 		8DEA093917A1C6D4003047A0 /* PPNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPNotifications.h; path = Classes/PPNotifications.h; sourceTree = "<group>"; };
 		8DEA093A17A1C6D4003047A0 /* PPNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPNotifications.m; path = Classes/PPNotifications.m; sourceTree = "<group>"; };
+		8DFE2EB517A2E4EC00C4782A /* DebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugViewController.h; path = Classes/Views/DebugViewController.h; sourceTree = "<group>"; };
+		8DFE2EB617A2E4EC00C4782A /* DebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugViewController.m; path = Classes/Views/DebugViewController.m; sourceTree = "<group>"; };
+		8DFE2EB817A2E50A00C4782A /* DebugNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugNavigationController.h; path = Classes/Views/DebugNavigationController.h; sourceTree = "<group>"; };
+		8DFE2EB917A2E50A00C4782A /* DebugNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugNavigationController.m; path = Classes/Views/DebugNavigationController.m; sourceTree = "<group>"; };
+		FAE4710F17A1C578001FBEEC /* PPLeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLeaderboardViewController.h; sourceTree = "<group>"; };
+		FAE4711017A1C578001FBEEC /* PPLeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeaderboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +285,10 @@
 				8DEA093217A1BD2C003047A0 /* PPUserEditNavigationController.m */,
 				8DEA093417A1BDF9003047A0 /* PPUserEditViewController.h */,
 				8DEA093517A1BDF9003047A0 /* PPUserEditViewController.m */,
+				8DFE2EB817A2E50A00C4782A /* DebugNavigationController.h */,
+				8DFE2EB917A2E50A00C4782A /* DebugNavigationController.m */,
+				8DFE2EB517A2E4EC00C4782A /* DebugViewController.h */,
+				8DFE2EB617A2E4EC00C4782A /* DebugViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -414,6 +424,8 @@
 				8DEA093317A1BD2C003047A0 /* PPUserEditNavigationController.m in Sources */,
 				8DEA093617A1BDF9003047A0 /* PPUserEditViewController.m in Sources */,
 				8DEA093B17A1C6D4003047A0 /* PPNotifications.m in Sources */,
+				8DFE2EB717A2E4EC00C4782A /* DebugViewController.m in Sources */,
+				8DFE2EBA17A2E50A00C4782A /* DebugNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
