@@ -56,14 +56,33 @@
     NSLog(@"Recieved player from server");
     PPUser *user = [mappingResult.dictionary objectForKey:@"user"];
     NSLog(@"%@", user.badge);
+    
+    if ([self firstUserIsLoggedIn]) {
+      // log in second player
+      
+      
+      
+      [self setFirstUserIsLoggedIn:NO];
+    } else {
+      // log in first player
+      
+      // load modal
+      PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
+      setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
+      [setupMatchController setUser:user];
+      [self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
+      
+      // wait for second user
+      [self setFirstUserIsLoggedIn:YES];
+    }
+    
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
     
-//		PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
-//		setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
-//		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
-//		
-//		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
+		PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
+		setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
+		
+		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
   }];
   
   [objectManager enqueueObjectRequestOperation:objectRequestOperation];
@@ -71,13 +90,13 @@
 }
 
 - (void)didReceiveRFIDTagId:(NSString *)tagID {
-  UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"app delegate" message:[NSString stringWithFormat:@"app delegate with token: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-  [alert2 show];
+  //UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"app delegate" message:[NSString stringWithFormat:@"app delegate with token: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+  //[alert2 show];
   // Hopefully this runs when the card is scanned...
   if (!processing) {
     processing = YES;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"SENDING REQUEST: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-    [alert show];
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"SENDING REQUEST: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+    //[alert show];
     
     [self sendRequest:tagID];
   }
@@ -85,8 +104,8 @@
 }
 
 - (void)kegboard:(KBKegboard *)kegboard didReceiveAuthToken:(KBKegboardMessageAuthToken *)message {
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"made it to app delegate." message:[NSString stringWithFormat:@"STATUS: %c", [message status]] delegate:self cancelButtonTitle:@"Cancel BRO" otherButtonTitles:nil, nil];
-  [alert show];
+//  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"made it to app delegate." message:[NSString stringWithFormat:@"STATUS: %c", [message status]] delegate:self cancelButtonTitle:@"Cancel BRO" otherButtonTitles:nil, nil];
+//  [alert show];
   // Only send a message when the card becomes present
   if ([message status]) [self didReceiveRFIDTagId:[message token]];
 }
@@ -113,6 +132,7 @@
   [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
   
   NSURL *localURL = [NSURL URLWithString:@"http://10.254.50.36:5000/"];
+//  NSURL *localURL = [NSURL URLWithString:@"http://poundpong.herokuapp.com/"];
   AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
   
   [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
@@ -123,6 +143,7 @@
   [RKObjectManager setSharedManager:objectManager];
   
   [self setProcessing:NO];
+  [self setFirstUserIsLoggedIn:NO];
 
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     self.homeViewController = [[PPHomeViewController alloc] init];

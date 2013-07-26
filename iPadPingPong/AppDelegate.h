@@ -36,10 +36,12 @@
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
   SystemSoundID systemSounds_[1];
   bool processing;
+  bool firstUserIsLoggedIn;
 }
 
 @property (strong, nonatomic) PPUIWindow *window;
 @property (assign, nonatomic) bool processing;
+@property (assign, nonatomic) bool firstUserIsLoggedIn;
 
 @property (strong, nonatomic) PPHomeViewController *homeViewController;
 

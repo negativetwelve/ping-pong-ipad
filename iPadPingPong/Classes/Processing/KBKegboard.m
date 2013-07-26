@@ -82,8 +82,8 @@ static NSInteger gFileDescriptor;
       break;
     case KB_MESSAGE_ID_AUTH_TOKEN:
       NSLog(@"AUTH TOKEN RECEIVED");
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"first message: %@", message] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-      [alert show];
+      //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"first message: %@", message] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+      //[alert show];
       [self.delegate kegboard:self didReceiveAuthToken:(KBKegboardMessageAuthToken *)message];
       break;
   }
