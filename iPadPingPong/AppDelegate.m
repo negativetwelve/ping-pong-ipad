@@ -69,7 +69,7 @@
   
   [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
   
-  NSURL *localURL = [NSURL URLWithString:@"http://localhost:3000/"];
+  NSURL *localURL = [NSURL URLWithString:@"http://10.254.50.36:5000/"];
   AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
   
   [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
