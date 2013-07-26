@@ -59,8 +59,11 @@
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
     
-    
-    //    [self presentModalViewController:navController animated:YES];
+//		PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
+//		setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
+//		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
+//		
+//		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
   }];
   
   [objectManager enqueueObjectRequestOperation:objectRequestOperation];
@@ -141,6 +144,7 @@
 	
   DebugViewController *debugViewController = [[DebugViewController alloc] init];
   DebugNavigationController *debugNavigationController = [[DebugNavigationController alloc] initWithRootViewController:debugViewController];
+	debugViewController.appDelegate = self;
   	
   [self registerTagId:@"test"];
   

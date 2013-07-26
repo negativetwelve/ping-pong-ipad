@@ -7,6 +7,7 @@
 //
 
 #import "DebugViewController.h"
+#import "AppDelegate.h"
 
 @interface DebugViewController ()
 
@@ -57,6 +58,10 @@
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
     
+		PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
+		setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
+		
+		[self.appDelegate.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
     
 //    [self presentModalViewController:navController animated:YES];
   }];

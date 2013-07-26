@@ -58,10 +58,6 @@
 	}];
 	
 	[objectManager enqueueObjectRequestOperation:objectRequestOperation];
-	
-	PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
-	setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
-	[self presentModalViewController:setupMatchController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

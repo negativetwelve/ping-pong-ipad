@@ -11,7 +11,10 @@
 
 #import "PPUser.h"
 #import "PPError.h"
+@class AppDelegate;
 
 @interface DebugViewController : UIViewController
+
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
 @end
