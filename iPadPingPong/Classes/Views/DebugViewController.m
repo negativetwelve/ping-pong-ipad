@@ -72,6 +72,12 @@
       
       // wait for second user
       [self.appDelegate setFirstUserIsLoggedIn:YES];
+      
+      UIButton *sendRequest = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 120, 60)];
+      [sendRequest setBackgroundColor:[UIColor grayColor]];
+      [sendRequest setTitle:@"Send Request" forState:UIControlStateNormal];
+      [sendRequest addTarget:self action:@selector(sendRequest:) forControlEvents:UIControlEventTouchUpInside];
+      [self.appDelegate.matchController.view addSubview:sendRequest];
     }
     
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
