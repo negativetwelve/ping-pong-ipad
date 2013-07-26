@@ -37,6 +37,7 @@
 	
 	[self.view addSubview:vsImage];
 	
+	
 	// Do any additional setup after loading the view.
 }
 
@@ -70,7 +71,7 @@
 	[self.view addSubview:playerTwo];
 	[self.view addSubview:playerTwoImage];
 	[UIView animateWithDuration:0.6 animations:^{
-		playerTwoImage.frame = CGRectMake(350, 50, 170, 300);
+		playerTwoImage.frame = CGRectMake(350, 60, 170, 300);
 	}];
 	
 	UIButton *player1Button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -98,10 +99,21 @@
 
 - (void)player1buttonPressed:(id)sender {
 	[self someoneWon:self.playerOneUser against:self.playerTwoUser];
+	[self resetView];
+	[self.presentingViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)player2buttonPressed:(id)sender {
 	[self someoneWon:self.playerTwoUser against:self.playerOneUser];
+	[self resetView];
+	[self.presentingViewController dismissModalViewControllerAnimated:YES];
+
+}
+
+- (void)resetView {
+	for (UIView *subView in [self.view subviews]) {
+		[subView removeFromSuperview];
+	}
 }
 
 - (void)someoneWon:(PPUser *)winner against:(PPUser *)loser {
