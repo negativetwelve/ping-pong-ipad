@@ -10,6 +10,7 @@
 #import "PPMatch.h"
 #import <RestKit/RestKit.h>
 #import "PPSetupMatchViewController.h"
+#import "PPUser.h"
 
 
 @interface PPRecentMatchViewController ()
@@ -37,7 +38,6 @@
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
 	self.tableView.backgroundColor = [UIColor whiteColor];
-	[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	
 	[self.view addSubview:self.tableView];
 	
@@ -92,9 +92,22 @@
 	
 	if (self.matches) {
 		PPMatch* match = [self.matches objectAtIndex:[indexPath row]];
-		UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
-		nameLabel.text = [NSString stringWithFormat:@"%@ beat %@", match.winner, match.loser];
+		UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 40, 40)];
+		nameLabel.text = [NSString stringWithFormat:@"%@ beat %@", match.winner.name, match.loser.name];
+		nameLabel.font = [UIFont systemFontOfSize:30.0];
+		[nameLabel sizeToFit];
 		[cell addSubview:nameLabel];
+
+		UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(600, 30, 0, 0)];
+		NSDate *date = [NSDate dateWithTimeIntervalSince1970:[match.timeStamp floatValue]];
+		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+		[dateFormatter setDateStyle: NSDateFormatterMediumStyle];
+		timeLabel.text = [dateFormatter stringFromDate:date];
+		timeLabel.font = [UIFont systemFontOfSize:20.0];
+		[timeLabel sizeToFit];
+		[cell addSubview:timeLabel];
+		
+
 	}
 	
 	return cell;

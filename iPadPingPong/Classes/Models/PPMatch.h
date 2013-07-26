@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) PPUser *winner;
 @property (nonatomic, retain) PPUser *loser;
-@property (nonatomic, copy) NSDate *timeStamp;
+@property (nonatomic, copy) NSNumber *timeStamp;
 @property (nonatomic, copy) NSNumber *pointsExchanged;
 
 + (RKObjectMapping *)mapping;
