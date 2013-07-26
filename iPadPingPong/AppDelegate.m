@@ -129,8 +129,8 @@
   
   [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
   
-  NSURL *localURL = [NSURL URLWithString:@"http://10.254.50.36:5000/"];
-//  NSURL *localURL = [NSURL URLWithString:@"http://poundpong.herokuapp.com/"];
+//  NSURL *localURL = [NSURL URLWithString:@"http://10.254.50.36:5000/"];
+  NSURL *localURL = [NSURL URLWithString:@"http://poundpong.herokuapp.com/"];
   AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
   
   [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
