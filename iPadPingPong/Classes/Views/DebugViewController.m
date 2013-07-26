@@ -39,10 +39,9 @@
 - (void)sendRequest:(id)selector {
   NSLog(@"sending request");
   
-  NSString *badge = @"123";
+  NSString *badge = [PPUser genRandStringLength:8]; 
   
   NSDictionary *params = @{
-  @"name": @"bob",
   @"badge": badge,
   };
 
