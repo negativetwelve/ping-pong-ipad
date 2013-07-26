@@ -86,6 +86,32 @@
 }
 
 
+- (void)someoneWon:(PPUser *)winner against:(PPUser *)loser {
+  NSLog(@"recording winner/loser");
+  
+  NSDictionary *params = @{
+  @"winner_badge" : @"",
+  @"loser_badge" : @"",
+  };
+  
+  RKObjectManager *objectManager = [RKObjectManager sharedManager];
+  NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"api/match/" parameters:params];
+  
+  RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[PPUser.userResponseDescriptor, PPError.responseDescriptor]];
+  
+  [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+//    PPUser *user = [mappingResult.dictionary objectForKey:@"player"];
+    
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    NSLog(@"Error.");
+    
+    
+  }];
+  
+  [objectManager enqueueObjectRequestOperation:objectRequestOperation];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
