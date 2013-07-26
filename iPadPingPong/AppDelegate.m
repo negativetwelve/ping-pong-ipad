@@ -91,9 +91,9 @@
   [self.window makeKeyAndVisible];
 //  [self.window.rootViewController presentModalViewController:userEditNavigationController animated:YES];
 
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"Scan your Yelp ID" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+//  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"Scan your Yelp ID" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
   
-  [alert show];
+//  [alert show];
   
   [self start:userEditViewController];
   

@@ -34,7 +34,7 @@ static NSInteger gFileDescriptor;
       gFileDescriptor = openPort(SERIAL_PORT, BAUD_RATE);
 #if !TARGET_IPHONE_SIMULATOR
       if (gFileDescriptor == -1) {
-        [[UIAlertView alloc] initWithTitle:@"Port failed to open." message:@"Port failed to open." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+//        [[UIAlertView alloc] initWithTitle:@"Port failed to open." message:@"Port failed to open." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
         NSLog(@"Port failed to open");
       }
 #endif
@@ -99,8 +99,8 @@ static NSInteger gFileDescriptor;
   crc_t calculatedCRC;
   NSTimeInterval timeStamp;
 
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Calling REPL. #1" message:@"hi" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-  [alert show];
+//  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Calling REPL. #1" message:@"hi" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+//  [alert show];
   
   while (YES) {
     // Find the prefix, re-aligning the messages as needed.
