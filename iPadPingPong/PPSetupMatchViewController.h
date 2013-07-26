@@ -10,6 +10,8 @@
 
 #import "PPError.h"
 
+#import "PPEditUserViewController.h"
+
 @class PPUser;
 
 @interface PPSetupMatchViewController : UIViewController {
