@@ -30,6 +30,7 @@
 //#define SERIAL_PORT "/Applications/SerialTest.app/TestData2NullTermination"
 
 @class KBKegboard;
+@class AppDelegate;
 
 @protocol KBKegboardDelegate <NSObject>
 - (void)kegboard:(KBKegboard *)kegboard didReceiveHello:(KBKegboardMessageHello *)message;

@@ -19,8 +19,8 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import "KBKegboard.h"
 #import "KBTypes.h"
+#import "KBKegboard.h"
 
 #define KB_VOLUME_DIFFERENCE_THRESHOLD (0.7 * kOuncesToLiter)
 // Adjust this value based on the flow meter properties
@@ -38,11 +38,11 @@
 - (void)kegProcessing:(KBKegProcessing *)kegProcessing didUpdatePourWithAmount:(double)amount flowRate:(double)flowRate;
 @end
 
-@interface KBKegProcessing : NSObject <KBKegboardDelegate> {
-  id<KBKegProcessingDelegate> _delegate;
-  
-  KBKegboard *_kegboard;
 
+@interface KBKegProcessing : NSObject {
+  id<KBKegProcessingDelegate> _delegate;
+  KBKegboard *_kegboard;
+  
   double _flowRate; // in liters / second
   
   double _lastVolume; // in liters

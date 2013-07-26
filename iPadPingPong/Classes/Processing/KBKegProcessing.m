@@ -30,6 +30,7 @@
 - (id)init {
   if ((self = [super init])) {
     _kegboard = [[KBKegboard alloc] initWithDelegate:self];
+//    [_kegboard setUserEditViewController:newController];
   }
   return self;
 }

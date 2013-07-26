@@ -34,6 +34,7 @@ static NSInteger gFileDescriptor;
       gFileDescriptor = openPort(SERIAL_PORT, BAUD_RATE);
 #if !TARGET_IPHONE_SIMULATOR
       if (gFileDescriptor == -1) {
+        [[UIAlertView alloc] initWithTitle:@"Port failed to open." message:@"Port failed to open." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
         NSLog(@"Port failed to open");
       }
 #endif
@@ -80,6 +81,9 @@ static NSInteger gFileDescriptor;
       [self.delegate kegboard:self didReceiveOutputStatus:(KBKegboardMessageOutputStatus *)message];
       break;
     case KB_MESSAGE_ID_AUTH_TOKEN:
+      NSLog(@"AUTH TOKEN RECEIVED");
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"%@", message] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+      [alert show];
       [self.delegate kegboard:self didReceiveAuthToken:(KBKegboardMessageAuthToken *)message];
       break;
   }
@@ -94,6 +98,9 @@ static NSInteger gFileDescriptor;
   char trailer[2];
   crc_t calculatedCRC;
   NSTimeInterval timeStamp;
+
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Calling REPL. #1" message:@"hi" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+  [alert show];
   
   while (YES) {
     // Find the prefix, re-aligning the messages as needed.
@@ -112,6 +119,7 @@ static NSInteger gFileDescriptor;
         timeStamp = CACurrentMediaTime();
       }
       calculatedCRC = crc_update(calculatedCRC, (unsigned char *)&byte, 1);
+      
       // Byte was expected
       if (byte == KBSP_PREFIX[headerPosition]) {
         headerPosition += 1;
@@ -129,6 +137,7 @@ static NSInteger gFileDescriptor;
         calculatedCRC = crc_init();
       }
     }
+    
     
     // Read message type and message length
     sleeperRead(gFileDescriptor, headerBytes, 4);
