@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "PPError.h"
+
 @class PPUser;
 
 @interface PPSetupMatchViewController : UIViewController {

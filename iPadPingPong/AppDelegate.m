@@ -74,11 +74,13 @@
       // wait for second user
       [self setFirstUserIsLoggedIn:YES];
     }
+    self.processing = NO;
     
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
     UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"ERROR APP DELEGATE" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
     [alert2 show];
+    self.processing = NO;
   }];
   
   [objectManager enqueueObjectRequestOperation:objectRequestOperation];
@@ -89,8 +91,8 @@
   //UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"app delegate" message:[NSString stringWithFormat:@"app delegate with token: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
   //[alert2 show];
   // Hopefully this runs when the card is scanned...
-  if (!processing) {
-    processing = YES;
+  if (!self.processing) {
+    self.processing = YES;
     //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"SENDING REQUEST: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
     //[alert show];
     
