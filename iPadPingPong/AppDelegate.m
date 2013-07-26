@@ -116,7 +116,7 @@
   }
 }
 
-- (void)start:(PPUserEditViewController *)controller {
+- (void)start {
   KBKegBoard *keg = [[KBKegboard alloc] initWithDelegate:self];
 
 }
@@ -151,13 +151,11 @@
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_unknownTagId:) name:PPUnknownTagIdNotification object:nil];
 
-  PPUserEditViewController *userEditViewController = [[PPUserEditViewController alloc] init];
-  PPUserEditNavigationController *userEditNavigationController = [[PPUserEditNavigationController alloc] initWithRootViewController:userEditViewController];
-  
 	PPLeaderboardViewController *leaderBoardViewController = [[PPLeaderboardViewController alloc] init];
-	UITabBarItem *leaderBoardTab = [[UITabBarItem alloc] initWithTitle:@"Alton Leaderboard" image:nil tag:1];
-	[leaderBoardViewController setTabBarItem:leaderBoardTab];
-	
+
+//  PPUserEditViewController *userEditViewController = [[PPUserEditViewController alloc] init];
+  PPUserEditNavigationController *userEditNavigationController = [[PPUserEditNavigationController alloc] initWithRootViewController:leaderBoardViewController];
+  
 	PPRecentMatchViewController *recentMatchViewController = [[PPRecentMatchViewController alloc] init];
 	PPRecentMatchNavController *recentMatchNavController = [[PPRecentMatchNavController alloc] initWithRootViewController:recentMatchViewController];
 	
@@ -173,8 +171,8 @@
   setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
   [self setMatchController:setupMatchController];
   
-  [self.homeViewController setViewControllers:@[recentMatchNavController, leaderBoardViewController, userEditNavigationController, debugNavigationController]];
-  [self.homeViewController setUserEditViewController:userEditViewController];
+  [self.homeViewController setViewControllers:@[userEditNavigationController, recentMatchNavController, debugNavigationController]];
+//  [self.homeViewController setUserEditViewController:userEditViewController];
 		
   self.window.rootViewController = self.homeViewController;
   [self.window makeKeyAndVisible];
@@ -183,8 +181,12 @@
 //  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome!" message:@"Scan your Yelp ID" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
   
 //  [alert show];
+	
+	
+	[[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:174.0/255 green:12.0/255 blue:4/255.0 alpha:1.0]];
+
   
-  [self start:userEditViewController];
+  [self start];
   
   return YES;
 }

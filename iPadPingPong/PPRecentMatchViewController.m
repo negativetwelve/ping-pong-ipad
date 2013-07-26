@@ -29,18 +29,7 @@
 	return self;
 }
 
-- (void)viewDidLoad
-{
-	[super viewDidLoad];
-	CGRect tableViewFrame = CGRectMake(0, 0,  self.view.bounds.size.width, self.view.bounds.size.height);
-	
-	self.tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:UITableViewStylePlain];
-	self.tableView.delegate = self;
-	self.tableView.dataSource = self;
-	self.tableView.backgroundColor = [UIColor whiteColor];
-	
-	[self.view addSubview:self.tableView];
-	
+- (void)viewWillAppear:(BOOL)animated	{
 	RKObjectManager *objectManager = [RKObjectManager sharedManager];
 	
 	NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodGET path:@"api/match" parameters:nil];
@@ -58,6 +47,19 @@
 	}];
 	
 	[objectManager enqueueObjectRequestOperation:objectRequestOperation];
+}
+
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+	CGRect tableViewFrame = CGRectMake(0, 0,  self.view.bounds.size.width, self.view.bounds.size.height);
+	
+	self.tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:UITableViewStylePlain];
+	self.tableView.delegate = self;
+	self.tableView.dataSource = self;
+	self.tableView.backgroundColor = [UIColor whiteColor];
+	
+	[self.view addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning

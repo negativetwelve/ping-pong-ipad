@@ -21,6 +21,7 @@
     if (self) {
         // Custom initialization
 			self.title = @"Recent Matches";
+			self.navigationBar.backgroundColor = [UIColor colorWithRed:174.0/255 green:12.0/255 blue:4/255.0 alpha:1.0];
     }
     return self;
 }

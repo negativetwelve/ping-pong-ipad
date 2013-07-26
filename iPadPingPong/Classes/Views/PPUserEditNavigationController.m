@@ -18,6 +18,8 @@
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
     self.title = @"User Sign In";
+		self.navigationBar.backgroundColor = [UIColor colorWithRed:174.0/255 green:12.0/255 blue:4/255.0 alpha:1.0];
+
   }
   return self;
 }

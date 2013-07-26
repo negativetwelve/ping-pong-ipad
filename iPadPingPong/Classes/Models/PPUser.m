@@ -28,7 +28,7 @@
 }
 
 + (RKResponseDescriptor *)usersResponseDescriptor {
-  RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:self.mapping pathPattern:nil keyPath:@"users" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:self.mapping pathPattern:nil keyPath:@"players" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
   return descriptor;
 }
 
