@@ -35,11 +35,13 @@
 @class KBKegboard;
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
   SystemSoundID systemSounds_[1];
+  PPSetupMatchViewController *matchController;
   bool processing;
   bool firstUserIsLoggedIn;
 }
 
 @property (strong, nonatomic) PPUIWindow *window;
+@property (strong, nonatomic) PPSetupMatchViewController *matchController;
 @property (assign, nonatomic) bool processing;
 @property (assign, nonatomic) bool firstUserIsLoggedIn;
 

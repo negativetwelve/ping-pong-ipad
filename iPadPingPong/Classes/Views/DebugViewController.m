@@ -48,7 +48,7 @@
 
   RKObjectManager *objectManager = [RKObjectManager sharedManager];
   NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"api/player/" parameters:params];
-  
+
   RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[PPUser.userResponseDescriptor, PPError.responseDescriptor]];
   
   [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
@@ -56,17 +56,29 @@
     PPUser *user = [mappingResult.dictionary objectForKey:@"player"];
     NSLog(@"%@", user.badge);
     
+    if ([self.appDelegate firstUserIsLoggedIn]) {
+      // log in second player
+      NSLog(@"logging in second user");
+      [self.appDelegate.matchController secondPlayerDidBadgeIn:user];
+      
+      [self.appDelegate setFirstUserIsLoggedIn:NO];
+    } else {
+      // log in first player
+      
+      NSLog(@"logging in first user");
+      // load modal
+      [self.appDelegate.homeViewController.selectedViewController presentModalViewController:self.appDelegate.matchController animated:YES];
+      [self.appDelegate.matchController firstPlayerDidBadgeIn:user];
+      
+      // wait for second user
+      [self.appDelegate setFirstUserIsLoggedIn:YES];
+    }
+    
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
-    
-		PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
-		setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
-		
-		[self.appDelegate.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
-    
-//    [self presentModalViewController:navController animated:YES];
+    UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"ERROR APP DELEGATE" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+    [alert2 show];
   }];
-  
   [objectManager enqueueObjectRequestOperation:objectRequestOperation];
   
 }

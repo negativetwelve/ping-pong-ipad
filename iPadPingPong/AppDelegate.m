@@ -59,18 +59,17 @@
     
     if ([self firstUserIsLoggedIn]) {
       // log in second player
-      
-      
+      NSLog(@"logging in second user");
+      [self.matchController secondPlayerDidBadgeIn:user];
       
       [self setFirstUserIsLoggedIn:NO];
     } else {
       // log in first player
       
+      NSLog(@"logging in first user");
       // load modal
-      PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
-      setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
-      [setupMatchController setUser:user];
-      [self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
+      [self.homeViewController.selectedViewController presentModalViewController:self.matchController animated:YES];
+      [self.matchController firstPlayerDidBadgeIn:user];
       
       // wait for second user
       [self setFirstUserIsLoggedIn:YES];
@@ -78,11 +77,8 @@
     
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
-    
-		PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
-		setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
-		
-		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
+    UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"ERROR APP DELEGATE" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+    [alert2 show];
   }];
   
   [objectManager enqueueObjectRequestOperation:objectRequestOperation];
@@ -170,6 +166,10 @@
   [self registerTagId:@"test"];
   
   NSLog(@"Loaded home view controller");
+  
+  PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
+  setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
+  [self setMatchController:setupMatchController];
   
   [self.homeViewController setViewControllers:@[recentMatchNavController, leaderBoardViewController, userEditNavigationController, debugNavigationController]];
   [self.homeViewController setUserEditViewController:userEditViewController];
