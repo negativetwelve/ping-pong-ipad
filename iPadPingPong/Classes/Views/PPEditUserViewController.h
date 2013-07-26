@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPEditUserViewController : UIViewController
+#import <RestKit/RestKit.h>
+
+#import "PPUser.h"
+#import "PPError.h"
+
+@interface PPEditUserViewController : UIViewController <UITextFieldDelegate> {
+  UITextField *name;
+  NSString *badge;
+}
+
+@property (nonatomic, strong) UITextField *name;
+@property (nonatomic, strong) NSString *badge;
 
 @end

@@ -56,6 +56,7 @@
 	[editName setFrame: CGRectMake(0, 0, 150, 50)];
   editName.font = [UIFont fontWithName:@"Helvetica Neue" size:40.0];
   [editName setTitle:firstPlayer.name forState:UIControlStateNormal];
+  [editName setTitle:firstPlayer.name forState:UIControlStateSelected];
   [editName addTarget:self action:@selector(editName1:) forControlEvents:UIControlEventTouchUpInside];
   editName.titleLabel.textColor = [UIColor blackColor];
 	editName.backgroundColor = [UIColor whiteColor];
@@ -82,6 +83,7 @@
 	[editName setFrame: CGRectMake(300, 0, 150, 50)];
   editName.font = [UIFont fontWithName:@"Helvetica Neue" size:40.0];
   [editName setTitle:secondPlayer.name forState:UIControlStateNormal];
+  [editName setTitle:secondPlayer.name forState:UIControlStateSelected];
   [editName addTarget:self action:@selector(editName2:) forControlEvents:UIControlEventTouchUpInside];
   editName.titleLabel.textColor = [UIColor blackColor];
 	editName.backgroundColor = [UIColor whiteColor];
@@ -140,10 +142,11 @@
   [self editName:self.playerTwoUser];
 }
 
-- (void)editName:(PPUser *)user {
+- (void)editName:(PPUser *)inputUser {
   PPEditUserViewController *editController = [[PPEditUserViewController alloc] init];
   editController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   editController.modalPresentationStyle = UIModalPresentationFormSheet;
+  [editController setBadge:inputUser.badge];
   [self presentViewController:editController animated:YES completion:nil];
 }
 

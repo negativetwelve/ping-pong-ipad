@@ -61,6 +61,7 @@
       // log in second player
       NSLog(@"logging in second user");
       [self.matchController secondPlayerDidBadgeIn:user];
+      [self playSystemSoundGlass];
       
       [self setFirstUserIsLoggedIn:NO];
     } else {
@@ -70,6 +71,7 @@
       // load modal
       [self.homeViewController.selectedViewController presentModalViewController:self.matchController animated:YES];
       [self.matchController firstPlayerDidBadgeIn:user];
+      [self playSystemSoundGlass];
       
       // wait for second user
       [self setFirstUserIsLoggedIn:YES];
@@ -140,6 +142,7 @@
 
   [RKObjectManager setSharedManager:objectManager];
   
+  [self initializeSounds];
   [self setProcessing:NO];
   [self setFirstUserIsLoggedIn:NO];
 

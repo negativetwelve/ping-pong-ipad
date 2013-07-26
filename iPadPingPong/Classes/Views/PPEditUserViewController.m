@@ -13,6 +13,7 @@
 @end
 
 @implementation PPEditUserViewController
+@synthesize name;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +30,12 @@
       
       [self.view addSubview:editName];
       
+      UITextField *nameField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 400, 50)];
+      [nameField setDelegate:self];
+      [self setName:nameField];
+      [self.view addSubview:nameField];
+      
+      
         // Custom initialization
     }
     return self;
@@ -36,7 +43,35 @@
 
 - (void)save:(id)selector {
   NSLog(@"save");
-  [self dismissViewControllerAnimated:YES completion:nil];
+  NSLog(@"%@ %@", self.name.text, self.badge);
+  
+  NSDictionary *params = @{
+                           @"name" : self.name.text,
+                           @"badge": self.badge,
+                           };
+  
+  RKObjectManager *objectManager = [RKObjectManager sharedManager];
+  NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"api/player/" parameters:params];
+  
+  RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[PPUser.userResponseDescriptor, PPError.responseDescriptor]];
+  
+  [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    NSLog(@"Recieved player from server");
+    PPUser *user = [mappingResult.dictionary objectForKey:@"player"];
+    NSLog(@"%@", user.badge);
+  
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    NSLog(@"Error loading user");
+    UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"ERROR APP DELEGATE" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+    [alert2 show];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+  }];
+  [objectManager enqueueObjectRequestOperation:objectRequestOperation];
+
+  
 }
 
 - (void)viewDidLoad
