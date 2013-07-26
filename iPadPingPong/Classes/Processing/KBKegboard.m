@@ -44,7 +44,7 @@ static NSInteger gFileDescriptor;
   return self;
 }
 
-- (id)initWithDelegate:(id<KBKegboardDelegate>)delegate {
+- (id)initWithDelegate:(AppDelegate *)delegate {
   if ((self = [self init])) {
     _delegate = delegate;
   }
@@ -66,23 +66,23 @@ static NSInteger gFileDescriptor;
   NSUInteger messageId = [message messageId];
   switch (messageId) {
     case KB_MESSAGE_ID_HELLO:
-      [self.delegate kegboard:self didReceiveHello:(KBKegboardMessageHello *)message];
+//      [self.delegate kegboard:self didReceiveHello:(KBKegboardMessageHello *)message];
       break;
     case KB_MESSAGE_ID_BOARD_CONFIGURATION:
-      [self.delegate kegboard:self didReceiveBoardConfiguration:(KBKegboardMessageBoardConfiguration *)message];
+//      [self.delegate kegboard:self didReceiveBoardConfiguration:(KBKegboardMessageBoardConfiguration *)message];
       break;
     case KB_MESSAGE_ID_METER_STATUS:
-      [self.delegate kegboard:self didReceiveMeterStatus:(KBKegboardMessageMeterStatus *)message];
+//      [self.delegate kegboard:self didReceiveMeterStatus:(KBKegboardMessageMeterStatus *)message];
       break;
     case KB_MESSAGE_ID_TEMPERATURE_READING:
-      [self.delegate kegboard:self didReceiveTemperatureReading:(KBKegboardMessageTemperatureReading *)message];
+//      [self.delegate kegboard:self didReceiveTemperatureReading:(KBKegboardMessageTemperatureReading *)message];
       break;
     case KB_MESSAGE_ID_OUTPUT_STATUS:
-      [self.delegate kegboard:self didReceiveOutputStatus:(KBKegboardMessageOutputStatus *)message];
+//      [self.delegate kegboard:self didReceiveOutputStatus:(KBKegboardMessageOutputStatus *)message];
       break;
     case KB_MESSAGE_ID_AUTH_TOKEN:
       NSLog(@"AUTH TOKEN RECEIVED");
-      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"%@", message] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"first message: %@", message] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
       [alert show];
       [self.delegate kegboard:self didReceiveAuthToken:(KBKegboardMessageAuthToken *)message];
       break;

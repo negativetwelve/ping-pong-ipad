@@ -19,5 +19,6 @@
 + (RKObjectMapping *)mapping;
 + (RKResponseDescriptor *)usersResponseDescriptor;
 + (RKResponseDescriptor *)userResponseDescriptor;
++ (NSString *) genRandStringLength: (int) len;
 
 @end
