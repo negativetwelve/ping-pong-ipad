@@ -39,6 +39,27 @@
 - (void)sendRequest:(id)selector {
   NSLog(@"sending request");
   
+  NSString *badge = @"123";
+  
+  NSDictionary *params = @{
+  @"name": @"bob",
+  @"badge": badge,
+  };
+
+  RKObjectManager *objectManager = [RKObjectManager sharedManager];
+  NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"api/player/" parameters:params];
+  
+  RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[PPUser.usersResponseDescriptor, PPError.responseDescriptor]];
+  
+  [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    NSLog(@"Recieved player from server");
+    PPUser *user = [mappingResult.dictionary objectForKey:@"user"];
+    NSLog(@"%@", user.badge);
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    NSLog(@"Error loading user");
+  }];
+  
+  [objectManager enqueueObjectRequestOperation:objectRequestOperation];
   
 }
 

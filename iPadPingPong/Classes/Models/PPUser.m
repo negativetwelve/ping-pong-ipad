@@ -13,8 +13,7 @@
 + (RKObjectMapping *)mapping {
   RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[self class]];
   [userMapping addAttributeMappingsFromDictionary:@{
-   @"user_id" : @"userId",
-   @"badge_id" : @"badgeId",
+   @"badge" : @"badge",
    @"name" : @"name",
    @"skill_level" : @"skillLevel",
    @"win_count" : @"winCount"

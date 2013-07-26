@@ -11,8 +11,7 @@
 
 @interface PPUser : NSObject
 
-@property (nonatomic, copy) NSNumber *userId;
-@property (nonatomic, copy) NSString *badgeId;
+@property (nonatomic, copy) NSString *badge;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *skillLevel;
 @property (nonatomic, copy) NSNumber *winCount;

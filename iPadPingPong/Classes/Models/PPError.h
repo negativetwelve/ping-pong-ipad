@@ -1,17 +1,18 @@
 //
-//  DebugViewController.h
+//  PPError.h
 //  iPadPingPong
 //
 //  Created by Mark Miyashita on 7/26/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
 
-#import "PPUser.h"
-#import "PPError.h"
+@interface PPError : NSObject
 
-@interface DebugViewController : UIViewController
+
++ (RKObjectMapping *)mapping;
++ (RKResponseDescriptor *)responseDescriptor;
 
 @end

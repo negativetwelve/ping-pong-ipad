@@ -41,6 +41,7 @@
 		8DEA093B17A1C6D4003047A0 /* PPNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEA093A17A1C6D4003047A0 /* PPNotifications.m */; };
 		8DFE2EB717A2E4EC00C4782A /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE2EB617A2E4EC00C4782A /* DebugViewController.m */; };
 		8DFE2EBA17A2E50A00C4782A /* DebugNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE2EB917A2E50A00C4782A /* DebugNavigationController.m */; };
+		8DFE2EBD17A2EC8300C4782A /* PPError.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE2EBC17A2EC8300C4782A /* PPError.m */; };
 		D118523ECEF94202A8C382FB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BF51020534B188FE7E327 /* libPods.a */; };
 		FAE4711117A1C578001FBEEC /* PPLeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE4711017A1C578001FBEEC /* PPLeaderboardViewController.m */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,8 @@
 		8DFE2EB617A2E4EC00C4782A /* DebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugViewController.m; path = Classes/Views/DebugViewController.m; sourceTree = "<group>"; };
 		8DFE2EB817A2E50A00C4782A /* DebugNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugNavigationController.h; path = Classes/Views/DebugNavigationController.h; sourceTree = "<group>"; };
 		8DFE2EB917A2E50A00C4782A /* DebugNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugNavigationController.m; path = Classes/Views/DebugNavigationController.m; sourceTree = "<group>"; };
+		8DFE2EBB17A2EC8300C4782A /* PPError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPError.h; path = Classes/Models/PPError.h; sourceTree = "<group>"; };
+		8DFE2EBC17A2EC8300C4782A /* PPError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPError.m; path = Classes/Models/PPError.m; sourceTree = "<group>"; };
 		FAE4710F17A1C578001FBEEC /* PPLeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLeaderboardViewController.h; sourceTree = "<group>"; };
 		FAE4711017A1C578001FBEEC /* PPLeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeaderboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,6 +301,8 @@
 			children = (
 				8DEA092517A1B264003047A0 /* PPUser.h */,
 				8DEA092617A1B264003047A0 /* PPUser.m */,
+				8DFE2EBB17A2EC8300C4782A /* PPError.h */,
+				8DFE2EBC17A2EC8300C4782A /* PPError.m */,
 				8DEA092817A1B275003047A0 /* PPMatch.h */,
 				8DEA092917A1B275003047A0 /* PPMatch.m */,
 			);
@@ -426,6 +431,7 @@
 				8DEA093B17A1C6D4003047A0 /* PPNotifications.m in Sources */,
 				8DFE2EB717A2E4EC00C4782A /* DebugViewController.m in Sources */,
 				8DFE2EBA17A2E50A00C4782A /* DebugNavigationController.m in Sources */,
+				8DFE2EBD17A2EC8300C4782A /* PPError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
