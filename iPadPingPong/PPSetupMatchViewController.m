@@ -75,7 +75,7 @@
 	UIButton *player1Button = [[UIButton alloc] initWithFrame:CGRectMake(20, 450, 300, 100)];
 	UIButton *player2Button = [[UIButton alloc] initWithFrame:CGRectMake(20, 450, 300, 100)];
 
-//	[player2Button addTarget:self action:@selector(<#selector#>) forControlEvents:<#(UIControlEvents)#>]
+	[player2Button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
 	player1Button.titleLabel.text = @"Player 1 Won";
 	player2Button.titleLabel.text = @"Player 2 Won";
 	
