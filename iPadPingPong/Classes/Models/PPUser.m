@@ -15,14 +15,15 @@
   [userMapping addAttributeMappingsFromDictionary:@{
    @"badge" : @"badge",
    @"name" : @"name",
-   @"skill_level" : @"skillLevel",
-   @"win_count" : @"winCount"
+   @"confidence" : @"confidence",
+   @"skill" : @"skill",
+   @"updated" : @"updated",
    }];
   return userMapping;
 }
 
 + (RKResponseDescriptor *)userResponseDescriptor {
-  RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:self.mapping pathPattern:nil keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:self.mapping pathPattern:nil keyPath:@"player" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
   return descriptor;
 }
 

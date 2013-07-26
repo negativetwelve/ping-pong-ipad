@@ -49,12 +49,13 @@
   RKObjectManager *objectManager = [RKObjectManager sharedManager];
   NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"api/player/" parameters:params];
   
-  RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[PPUser.usersResponseDescriptor, PPError.responseDescriptor]];
+  RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[PPUser.userResponseDescriptor, PPError.responseDescriptor]];
   
   [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
     NSLog(@"Recieved player from server");
-    PPUser *user = [mappingResult.dictionary objectForKey:@"user"];
+    PPUser *user = [mappingResult.dictionary objectForKey:@"player"];
     NSLog(@"%@", user.badge);
+    
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
     
