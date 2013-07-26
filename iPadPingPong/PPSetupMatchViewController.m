@@ -35,6 +35,7 @@
 
 	vsImage.frame = CGRectMake(200, 220, 100, 100);
 	
+	[self.view addSubview:vsImage];
 	
 	// Do any additional setup after loading the view.
 }
@@ -57,9 +58,9 @@
 }
 
 -(void)secondPlayerDidBadgeIn:(PPUser *)secondPlayer {
-	UILabel *playerTwo = [[UILabel alloc] initWithFrame:CGRectMake(300, 420, 0, 0)];
+	UILabel *playerTwo = [[UILabel alloc] initWithFrame:CGRectMake(330, 10, 0, 0)];
 	UIImageView *playerTwoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"player2.jpg"]];
-	playerTwoImage.frame = CGRectMake(1200, 450, 170, 300);
+	playerTwoImage.frame = CGRectMake(1200, 50, 170, 300);
 	playerTwo.text = secondPlayer.name;
 	playerTwo.backgroundColor = [UIColor clearColor];
 	playerTwo.textColor = [UIColor redColor];
@@ -69,15 +70,25 @@
 	[self.view addSubview:playerTwo];
 	[self.view addSubview:playerTwoImage];
 	[UIView animateWithDuration:0.6 animations:^{
-		playerTwoImage.frame = CGRectMake(300, 450, 170, 300);
+		playerTwoImage.frame = CGRectMake(350, 50, 170, 300);
 	}];
 	
-	UIButton *player1Button = [[UIButton alloc] initWithFrame:CGRectMake(20, 450, 300, 100)];
-	UIButton *player2Button = [[UIButton alloc] initWithFrame:CGRectMake(20, 450, 300, 100)];
+	UIButton *player1Button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[player1Button setFrame: CGRectMake(20, 440, 200, 70)];
+	player1Button.backgroundColor = [UIColor blueColor];
+	UIButton *player2Button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[player2Button setFrame: CGRectMake(300, 440, 200, 70)];
+	player2Button.backgroundColor = [UIColor redColor];
 
-	[player2Button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-	player1Button.titleLabel.text = @"Player 1 Won";
-	player2Button.titleLabel.text = @"Player 2 Won";
+	[player2Button addTarget:self action:@selector(player1buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+	[player1Button addTarget:self action:@selector(player2buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+
+	[player1Button setTitle:@"Player 1 Won" forState:UIControlStateNormal];
+	[player2Button setTitle:@"Player 2 Won" forState:UIControlStateNormal];
+
+	player1Button.titleLabel.textColor = [UIColor whiteColor];
+	player2Button.titleLabel.textColor = [UIColor whiteColor];
+
 	
 	[self.view addSubview:player1Button];
 	[self.view addSubview:player2Button];
@@ -85,6 +96,13 @@
 
 }
 
+- (void)player1buttonPressed:(id)sender {
+	
+}
+
+- (void)player2buttonPressed:(id)sender {
+	
+}
 
 - (void)didReceiveMemoryWarning
 {
