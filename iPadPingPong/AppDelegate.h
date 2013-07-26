@@ -26,14 +26,19 @@
 
 #import "KBKegProcessing.h"
 
-@class PPHomeViewController;
 
+@class PPHomeViewController;
+@class KBKegboard;
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
   SystemSoundID systemSounds_[1];
+  bool processing;
 }
 
 @property (strong, nonatomic) PPUIWindow *window;
+@property (assign, nonatomic) bool processing;
 
 @property (strong, nonatomic) PPHomeViewController *homeViewController;
+
+- (void)kegboard:(KBKegboard *)kegboard didReceiveAuthToken:(KBKegboardMessageAuthToken *)message;
 
 @end

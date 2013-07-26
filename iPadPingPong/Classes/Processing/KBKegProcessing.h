@@ -28,7 +28,7 @@
 #define KB_POUR_TIMEOUT 1.5
 
 @class KBKegProcessing;
-
+@class KBKegBoard;
 @protocol KBKegProcessingDelegate
 - (void)kegProcessingDidStartPour:(KBKegProcessing *)kegProcessing;
 - (void)kegProcessing:(KBKegProcessing *)kegProcessing didEndPourWithAmount:(double)amount;
@@ -41,7 +41,7 @@
 
 @interface KBKegProcessing : NSObject {
   id<KBKegProcessingDelegate> _delegate;
-  KBKegboard *_kegboard;
+  KBKegBoard *_kegboard;
   
   double _flowRate; // in liters / second
   

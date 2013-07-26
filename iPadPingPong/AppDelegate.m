@@ -37,14 +37,53 @@
   
 }
 
+- (void)sendRequest:(NSString *)tagID {
+  NSLog(@"sending request");
+  
+//  NSString *badge = [PPUser genRandStringLength:8];
+  NSString *badge = tagID;
+  
+  NSDictionary *params = @{
+    @"badge": badge,
+  };
+  
+  RKObjectManager *objectManager = [RKObjectManager sharedManager];
+  NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"api/player/" parameters:params];
+  
+  RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[PPUser.usersResponseDescriptor, PPError.responseDescriptor]];
+  
+  [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    NSLog(@"Recieved player from server");
+    PPUser *user = [mappingResult.dictionary objectForKey:@"user"];
+    NSLog(@"%@", user.badge);
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    NSLog(@"Error loading user");
+    
+    
+    //    [self presentModalViewController:navController animated:YES];
+  }];
+  
+  [objectManager enqueueObjectRequestOperation:objectRequestOperation];
+  
+}
+
 - (void)didReceiveRFIDTagId:(NSString *)tagID {
+  UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"app delegate" message:[NSString stringWithFormat:@"app delegate with token: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+  [alert2 show];
   // Hopefully this runs when the card is scanned...
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"app delegate with token: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-  [alert show];
+  if (!processing) {
+    processing = YES;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"SENDING REQUEST: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+    [alert show];
+    
+    [self sendRequest:tagID];
+  }
   // Add handling for view controller here.
 }
 
 - (void)kegboard:(KBKegboard *)kegboard didReceiveAuthToken:(KBKegboardMessageAuthToken *)message {
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"made it to app delegate." message:[NSString stringWithFormat:@"STATUS: %c", [message status]] delegate:self cancelButtonTitle:@"Cancel BRO" otherButtonTitles:nil, nil];
+  [alert show];
   // Only send a message when the card becomes present
   if ([message status]) [self didReceiveRFIDTagId:[message token]];
 }
@@ -58,7 +97,8 @@
 }
 
 - (void)start:(PPUserEditViewController *)controller {
-  KBKegProcessing *keg = [[KBKegProcessing alloc] init];
+  KBKegBoard *keg = [[KBKegboard alloc] initWithDelegate:self];
+
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -75,7 +115,11 @@
   [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
   
   RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+  objectManager.requestSerializationMIMEType = RKMIMETypeJSON;
+
   [RKObjectManager setSharedManager:objectManager];
+  
+  [self setProcessing:NO];
 
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     self.homeViewController = [[PPHomeViewController alloc] init];

@@ -26,12 +26,13 @@
 #import "Serial.h"
 #import "KBKegboardMessage.h"
 
+#import "AppDelegate.h"
+
 #define SERIAL_PORT "/dev/tty.iap"
 //#define SERIAL_PORT "/Applications/SerialTest.app/TestData2NullTermination"
 
 @class KBKegboard;
 @class AppDelegate;
-
 @protocol KBKegboardDelegate <NSObject>
 - (void)kegboard:(KBKegboard *)kegboard didReceiveHello:(KBKegboardMessageHello *)message;
 - (void)kegboard:(KBKegboard *)kegboard didReceiveBoardConfiguration:(KBKegboardMessageBoardConfiguration *)message;
@@ -42,14 +43,13 @@
 @end
 
 @interface KBKegboard : NSObject {
-  id<KBKegboardDelegate> _delegate;
   NSThread *_readLoopThread;
+  AppDelegate *delegate;
 }
 
-@property (retain, nonatomic) id<KBKegboardDelegate> delegate;
+@property (strong, nonatomic) AppDelegate *delegate;
 
-- (id)initWithDelegate:(id<KBKegboardDelegate>)delegate;
-
+- (id)initWithDelegate:(AppDelegate *)delegate;
 - (void)start;
 
 @end

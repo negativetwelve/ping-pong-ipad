@@ -56,6 +56,9 @@
     NSLog(@"%@", user.badge);
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
+    
+    
+//    [self presentModalViewController:navController animated:YES];
   }];
   
   [objectManager enqueueObjectRequestOperation:objectRequestOperation];
