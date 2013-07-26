@@ -59,11 +59,10 @@
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     NSLog(@"Error loading user");
     
-//		PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
-//		setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
-//		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
-//		
-//		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
+		PPSetupMatchViewController *setupMatchController = [[PPSetupMatchViewController alloc] init];
+		setupMatchController.modalPresentationStyle = UIModalPresentationFormSheet;
+		
+		[self.homeViewController.selectedViewController presentModalViewController:setupMatchController animated:YES];
   }];
   
   [objectManager enqueueObjectRequestOperation:objectRequestOperation];
@@ -71,13 +70,13 @@
 }
 
 - (void)didReceiveRFIDTagId:(NSString *)tagID {
-  UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"app delegate" message:[NSString stringWithFormat:@"app delegate with token: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-  [alert2 show];
+  //UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"app delegate" message:[NSString stringWithFormat:@"app delegate with token: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+  //[alert2 show];
   // Hopefully this runs when the card is scanned...
   if (!processing) {
     processing = YES;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"SENDING REQUEST: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
-    [alert show];
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IT WORKS." message:[NSString stringWithFormat:@"SENDING REQUEST: %@", tagID] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+    //[alert show];
     
     [self sendRequest:tagID];
   }
@@ -85,8 +84,8 @@
 }
 
 - (void)kegboard:(KBKegboard *)kegboard didReceiveAuthToken:(KBKegboardMessageAuthToken *)message {
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"made it to app delegate." message:[NSString stringWithFormat:@"STATUS: %c", [message status]] delegate:self cancelButtonTitle:@"Cancel BRO" otherButtonTitles:nil, nil];
-  [alert show];
+//  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"made it to app delegate." message:[NSString stringWithFormat:@"STATUS: %c", [message status]] delegate:self cancelButtonTitle:@"Cancel BRO" otherButtonTitles:nil, nil];
+//  [alert show];
   // Only send a message when the card becomes present
   if ([message status]) [self didReceiveRFIDTagId:[message token]];
 }
